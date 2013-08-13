@@ -2,6 +2,9 @@
 
 The JavaScript Task Runner
 
+Dr. Gleb Bahmutov, PhD
+
+**@bahmutov**
 
 ## Front end build steps
 
