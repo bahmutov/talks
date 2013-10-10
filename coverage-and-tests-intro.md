@@ -6,18 +6,16 @@ uTest.com **@bahmutov**
 
 
 
-
-Tests and code
-
-![Code and tests](images/zipper.jpg)
-
-
-
-
 Tests add weight
 
 ![Tractor pull](images/tractor-pull.jpg)
 
+
+
+
+Tests and code
+
+![Code and tests](images/zipper.jpg)
 
 ## Problems
 
@@ -37,6 +35,6 @@ Tests add weight
 ### Stay tuned!
 
 
-[slides-now-footer]: "uTest.com"
+[slides-now-footer]: "@bahmutov"
 [slides-now-theme]: "coverflow"
 [slides-now-timer]: "3"
