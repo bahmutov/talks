@@ -34,9 +34,9 @@ Tests add weight
 * It is not very useful for large tests
 * Do not shoot for 100% code coverage
 
-
+### Stay tuned!
 
 
 [slides-now-footer]: "uTest.com"
-[slides-now-theme]: "bw"
+[slides-now-theme]: "coverflow"
 [slides-now-timer]: "3"
