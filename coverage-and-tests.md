@@ -25,7 +25,7 @@ gt -m "math" lots-of-tests.js
 
 Axiom 2 - tests add weight
 
-![Tractor pull](https://bitbucket.org/bahmutov/talks-public/raw/master/images/tractor-pull.jpg)
+![Tractor pull](images/tractor-pull.jpg)
 
 
 
@@ -34,7 +34,7 @@ Axiom 2 - tests add weight
 
 Test classification
 
-![How Google Tests Software](https://bitbucket.org/bahmutov/talks-public/raw/master/images/how-google-tests-cover.png)
+![How Google Tests Software](images/how-google-tests-cover.png)
 
 ## Code Coverage usefulness
 
@@ -48,7 +48,7 @@ Test classification
 
 Small tests
 
-![Code and tests](https://bitbucket.org/bahmutov/talks-public/raw/master/images/zipper.jpg)
+![Code and tests](images/zipper.jpg)
 
 
 
@@ -79,17 +79,17 @@ Detect features not covered by tests
 
 coverage
 
-![coverage 1](https://bitbucket.org/bahmutov/talks-public/raw/master/images/math-coverage.jpg)
+![coverage 1](images/math-coverage.jpg)
 
 
 
 Added subtraction test
-![coverage 2](https://bitbucket.org/bahmutov/talks-public/raw/master/images/add-sub-coverage.jpg)
+![coverage 2](images/add-sub-coverage.jpg)
 
 
 
 Don't forget branches
-![abs coverage](https://bitbucket.org/bahmutov/talks-public/raw/master/images/abs-coverage.jpg)
+![abs coverage](images/abs-coverage.jpg)
 
 
 ## My personal target
@@ -109,14 +109,14 @@ Don't forget branches
 
 Developers are stateless
 
-![sub as add](https://bitbucket.org/bahmutov/talks-public/raw/master/images/sub-as-add-coverage.jpg)
+![sub as add](images/sub-as-add-coverage.jpg)
 
 
 
 
 Test skipped but code is still covered
 
-![skipped](https://bitbucket.org/bahmutov/talks-public/raw/master/images/add-test-skipped-yet-still-covered.jpg)
+![skipped](images/add-test-skipped-yet-still-covered.jpg)
 
 ## Covering all paths
 
@@ -147,7 +147,7 @@ coverage-ie OR coverage-chrome = coverage-all
 
 
 
-![sub as add](https://bitbucket.org/bahmutov/talks-public/raw/master/images/sub-as-add-coverage.jpg)
+![sub as add](images/sub-as-add-coverage.jpg)
 
 ## Test / code overlap
 
@@ -291,7 +291,7 @@ test('invalid emails', function () {
 
 Medium tests
 
-![Medium tests](https://bitbucket.org/bahmutov/talks-public/raw/master/images/puzzle.jpg)
+![Medium tests](images/puzzle.jpg)
 
 ## Medium tests
 
@@ -303,7 +303,7 @@ Covering all code paths seems pointless.
 
 Large tests
 
-![Entire puzzle](https://bitbucket.org/bahmutov/talks-public/raw/master/images/entire-puzzle.jpg)
+![Entire puzzle](images/entire-puzzle.jpg)
 
 
 
@@ -319,34 +319,34 @@ Covering all source code is impossible.
 
 Cross language / system barriers
 
-![Cross language border](https://bitbucket.org/bahmutov/talks-public/raw/master/images/border.jpg)
+![Cross language border](images/border.jpg)
 
 
 
 
 Unused and 3rd party code
 
-![Small amount of code is used](https://bitbucket.org/bahmutov/talks-public/raw/master/images/iceberg.jpg)
+![Small amount of code is used](images/iceberg.jpg)
 
 
 
 
 worse in reality
 
-![mix of code](https://bitbucket.org/bahmutov/talks-public/raw/master/images/icebergs.jpg)
+![mix of code](images/icebergs.jpg)
 
 
 
 Unit testing can be exhaustive
 
-![Full testing](https://bitbucket.org/bahmutov/talks-public/raw/master/images/rebar.jpg)
+![Full testing](images/rebar.jpg)
 
 
 
 
 Large testing is limited
 
-![Limited testing](https://bitbucket.org/bahmutov/talks-public/raw/master/images/sears-chicago.jpg)
+![Limited testing](images/sears-chicago.jpg)
 
 
 ## Conclusions
