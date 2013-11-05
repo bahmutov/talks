@@ -9,17 +9,6 @@ Dr. Gleb Bahmutov, PhD
 
 If collecting code coverage is hard - it will be skipped
 
-## Flexibility
-
-```
-gt math.js
-gt tests/**/s*.js
-gt -t "add*" math.js
-gt -m "math" lots-of-tests.js
-```
-
-### coverage is collected by default in all cases
-
 
 
 
@@ -53,7 +42,7 @@ Small tests
 
 
 
-## Example
+## Example math.js
 
 ```
 function add(a, b) {
@@ -69,6 +58,18 @@ test('addition', function () {
   equal(add(-2, 2), 0, '-2 + 2 = 0');
 });
 ```
+
+## Flexibility
+
+```
+gt math.js
+gt tests/**/s*.js
+gt -t "add*" math.js
+gt -m "math" lots-of-tests.js
+```
+
+### coverage is collected by default in all cases
+
 
 ## Code coverage use 1
 
@@ -159,6 +160,8 @@ subtraction test   100%    100%
 
 If running **subtraction**, do not run **addition**
 
+At least, run **subtraction** first
+
 ## Code coverage use 2
 
 Show technical debt
@@ -181,13 +184,12 @@ Show technical debt
 
 
 
-## Risk map
 
-Combined test coverage and code complexity visualization
+
 
 [risk-map](http://glebbahmutov.com/risk-map)
 
-
+![risk-map](images/risk-map.jpg)
 
 ## Code coverage use 3
 
@@ -361,6 +363,6 @@ Large testing is limited
 
 
 
-[slides-now-footer]: "code coverage and testing"
+[slides-now-footer]: "@bahmutov code coverage and testing"
 [slides-now-theme]: "bw"
 [slides-now-timer]: "40"
