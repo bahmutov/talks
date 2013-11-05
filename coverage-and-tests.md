@@ -2,8 +2,9 @@
 
 Dr. Gleb Bahmutov, PhD
 
-**@bahmutov**
+[uTest](http://www.utest.com/) **@bahmutov**
 
+[https://github.com/bahmutov/talks](https://github.com/bahmutov/talks)
 
 ## Axiom 1
 
@@ -289,6 +290,25 @@ test('invalid emails', function () {
 });
 ```
 
+
+
+
+Default options using code
+
+![Options in code](images/options-coverage-1.jpg)
+
+
+
+
+Default options using object
+
+![Options object](images/options-coverage-2.jpg)
+
+## Obligatory math
+
+    N * 0.8 < N/2 * 0.8 + N/2 * 0.8
+
+Split a large file and cover at same ratio.
 
 
 Medium tests
