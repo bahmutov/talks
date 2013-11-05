@@ -6,6 +6,17 @@ Dr. Gleb Bahmutov, PhD
 
 [https://github.com/bahmutov/talks](https://github.com/bahmutov/talks)
 
+## UTest
+
+In the wild testing for mobile / web apps
+
+* real people
+* real devices
+* real locations
+
+Important to have base quality level before handing off
+an app to the testers.
+
 ## Axiom 1
 
 If collecting code coverage is hard - it will be skipped
