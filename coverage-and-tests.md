@@ -6,6 +6,8 @@ Dr. Gleb Bahmutov, PhD
 
 [https://github.com/bahmutov/talks](https://github.com/bahmutov/talks)
 
+Tools at [http://glebbahmutov.com](http://glebbahmutov.com/)
+
 ## UTest -> Applause
 
 In the wild testing for mobile / web apps
