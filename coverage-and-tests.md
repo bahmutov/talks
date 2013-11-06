@@ -2,7 +2,7 @@
 
 Dr. Gleb Bahmutov, PhD
 
-[uTest](http://www.utest.com/) **@bahmutov**
+[uTest -> Applause](http://www.utest.com/) **@bahmutov**
 
 [https://github.com/bahmutov/talks](https://github.com/bahmutov/talks)
 
