@@ -135,10 +135,10 @@ Test skipped but code is still covered
 
 ```
 // individual coverage info file
-DA:1,1
+DA:1,1  <-- line number 1, covered
 DA:2,1
 DA:5,1
-DA:6,0
+DA:6,0  <-- line number 6, not covered
 DA:9,1
 ...
 ```
@@ -192,7 +192,10 @@ Show technical debt
   // halstead volume = 3
 ```
 
-[npmjs.org/package/jsc](https://npmjs.org/package/jsc)
+[npmjs.org/package/jsc](https://npmjs.org/package/jsc),
+[grunt-complexity](https://github.com/vigetlabs/grunt-complexity),
+[complexity-report](https://github.com/philbooth/complexity-report),
+[plato](https://npmjs.org/package/plato)
 
 
 
@@ -385,7 +388,7 @@ Large testing is limited
 ## Conclusions
 
 * Set up code coverage to be as easy as pie
-* Use code coverage with small tests
+* Use code coverage with *small* tests
   * combine with complexity
   * speed up tests
   * remember limitations
