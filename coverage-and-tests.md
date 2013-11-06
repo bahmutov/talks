@@ -185,14 +185,14 @@ Show technical debt
   // cyclomatic = 1
   // halstead volume = 2
 
-  function abs(a, b) {
+  function abs(a) {
     return a >= 0 ? a : -a
   }
   // cyclomatic = 2
   // halstead volume = 3
 ```
 
-[npmjs.org/package/jsc](https://npmjs.org/package/jsc),
+[jsc](https://npmjs.org/package/jsc),
 [grunt-complexity](https://github.com/vigetlabs/grunt-complexity),
 [complexity-report](https://github.com/philbooth/complexity-report),
 [plato](https://npmjs.org/package/plato)
