@@ -28,7 +28,7 @@ If collecting code coverage is hard - it will be skipped
 
 Axiom 2 - tests add weight
 
-![Tractor pull](images/tractor-pull.jpg)
+![Tractor pull](https://raw.github.com/bahmutov/talks/master/images/tractor-pull.jpg)
 
 
 
@@ -37,7 +37,7 @@ Axiom 2 - tests add weight
 
 Test classification
 
-![How Google Tests Software](images/how-google-tests-cover.png)
+![How Google Tests Software](https://raw.github.com/bahmutov/talks/master/images/how-google-tests-cover.png)
 
 ## Code Coverage usefulness
 
@@ -51,7 +51,7 @@ Test classification
 
 Small tests
 
-![Code and tests](images/zipper.jpg)
+![Code and tests](https://raw.github.com/bahmutov/talks/master/images/zipper.jpg)
 
 
 
@@ -94,17 +94,17 @@ Detect features not covered by tests
 
 coverage
 
-![coverage 1](images/math-coverage.jpg)
+![coverage 1](https://raw.github.com/bahmutov/talks/master/images/math-coverage.jpg)
 
 
 
 Added subtraction test
-![coverage 2](images/add-sub-coverage.jpg)
+![coverage 2](https://raw.github.com/bahmutov/talks/master/images/add-sub-coverage.jpg)
 
 
 
 Don't forget branches
-![abs coverage](images/abs-coverage.jpg)
+![abs coverage](https://raw.github.com/bahmutov/talks/master/images/abs-coverage.jpg)
 
 
 ## My personal target
@@ -119,8 +119,7 @@ Don't forget branches
 
 Jenkins [Cobertura plugin](https://wiki.jenkins-ci.org/display/JENKINS/Cobertura+Plugin)
 
-![Jenkins coverage](images/jenkins.jpg)
-
+![Jenkins coverage](https://raw.github.com/bahmutov/talks/master/images/jenkins.jpg)
 
 ## Small tests coverage challenges
 
@@ -132,14 +131,14 @@ Jenkins [Cobertura plugin](https://wiki.jenkins-ci.org/display/JENKINS/Cobertura
 
 Developers are stateless
 
-![sub as add](images/sub-as-add-coverage.jpg)
+![sub as add](https://raw.github.com/bahmutov/talks/master/images/sub-as-add-coverage.jpg)
 
 
 
 
 Test skipped but code is still covered
 
-![skipped](images/add-test-skipped-yet-still-covered.jpg)
+![skipped](https://raw.github.com/bahmutov/talks/master/images/add-test-skipped-yet-still-covered.jpg)
 
 ## Covering all paths
 
@@ -170,7 +169,7 @@ coverage-ie OR coverage-chrome = coverage-all
 
 
 
-![sub as add](images/sub-as-add-coverage.jpg)
+![sub as add](https://raw.github.com/bahmutov/talks/master/images/sub-as-add-coverage.jpg)
 
 ## Test / code overlap
 
@@ -214,7 +213,7 @@ Show technical debt
 
 [risk-map](http://glebbahmutov.com/risk-map)
 
-![risk-map](images/risk-map.jpg)
+![risk-map](https://raw.github.com/bahmutov/talks/master/images/risk-map.jpg)
 
 ## Code coverage use 3
 
@@ -319,14 +318,14 @@ test('invalid emails', function () {
 
 Default options using code
 
-![Options in code](images/options-coverage-1.jpg)
+![Options in code](https://raw.github.com/bahmutov/talks/master/images/options-coverage-1.jpg)
 
 
 
 
 Default options using object
 
-![Options object](images/options-coverage-2.jpg)
+![Options object](https://raw.github.com/bahmutov/talks/master/images/options-coverage-2.jpg)
 
 ## Obligatory math
 
@@ -337,7 +336,7 @@ Split a large file and cover at same ratio.
 
 Medium tests
 
-![Medium tests](images/puzzle.jpg)
+![Medium tests](https://raw.github.com/bahmutov/talks/master/images/puzzle.jpg)
 
 ## Medium tests
 
@@ -349,7 +348,7 @@ Covering all code paths seems pointless.
 
 Large tests
 
-![Entire puzzle](images/entire-puzzle.jpg)
+![Entire puzzle](https://raw.github.com/bahmutov/talks/master/images/entire-puzzle.jpg)
 
 
 
@@ -365,34 +364,34 @@ Covering all source code is impossible.
 
 Cross language / system barriers
 
-![Cross language border](images/border.jpg)
+![Cross language border](https://raw.github.com/bahmutov/talks/master/images/border.jpg)
 
 
 
 
 Unused and 3rd party code
 
-![Small amount of code is used](images/iceberg.jpg)
+![Small amount of code is used](https://raw.github.com/bahmutov/talks/master/images/iceberg.jpg)
 
 
 
 
 worse in reality
 
-![mix of code](images/icebergs.jpg)
+![mix of code](https://raw.github.com/bahmutov/talks/master/images/icebergs.jpg)
 
 
 
 Unit testing can be exhaustive
 
-![Full testing](images/rebar.jpg)
+![Full testing](https://raw.github.com/bahmutov/talks/master/images/rebar.jpg)
 
 
 
 
 Large testing is limited
 
-![Limited testing](images/sears-chicago.jpg)
+![Limited testing](https://raw.github.com/bahmutov/talks/master/images/sears-chicago.jpg)
 
 
 ## Conclusions
