@@ -320,7 +320,7 @@ Default options using object
 
 ## Obligatory math
 
-    N * 0.8 < N/2 * 0.8 + N/2 * 0.8
+    N * 0.8 ⋘ N/2 * 0.8 + N/2 * 0.8
 
 Split a large file and cover at same ratio.
 
