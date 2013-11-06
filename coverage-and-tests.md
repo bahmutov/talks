@@ -45,18 +45,7 @@ Test classification
 * medium tests - less helpful
 * large tests - not helpful
 
-
-
-
-
-Small tests
-
-![Code and tests](images/zipper.jpg)
-
-
-
-
-## Example math.js
+## Small tests
 
 ```
 function add(a, b) {
@@ -73,6 +62,22 @@ test('addition', function () {
 });
 ```
 
+
+
+Code vs small tests
+
+![Code and tests](images/zipper.jpg)
+
+
+## Coverage tools
+
+JavaScript and related [istanbul](https://github.com/gotwarlost/istanbul)
+
+Java and related [Emma](http://emma.sourceforge.net/)
+
+Everything else: see [c2.com](http://c2.com/cgi/wiki?CodeCoverageTools)
+
+
 ## Flexibility
 
 ```
@@ -83,7 +88,6 @@ gt -m "math" lots-of-tests.js
 ```
 
 ### coverage is collected by default in all cases
-
 
 ## Code coverage use 1
 
@@ -145,10 +149,10 @@ Test skipped but code is still covered
 
 ```
 // individual coverage info file
-DA:1,1  <-- line number 1, covered
+DA:1,1  //-- line number 1, covered
 DA:2,1
 DA:5,1
-DA:6,0  <-- line number 6, not covered
+DA:6,0  //-- line number 6, not covered
 DA:9,1
 ...
 ```
@@ -162,33 +166,11 @@ be a way to combine results to show unified results.
 coverage-ie OR coverage-chrome = coverage-all
 ```
 
-## Test overlap analysis
-
-1. Run each unit test separately
-2. Compute overlap line by line
-
-
-
-
-![sub as add](images/sub-as-add-coverage.jpg)
-
-## Test / code overlap
-
-```
-                   add     sub
-addition test      100%    0%
-subtraction test   100%    100%
-```
-
-If running **subtraction**, do not run **addition**
-
-At least, run **subtraction** first
-
 ## Code coverage use 2
 
 Show technical debt
 
-## Testing + Code Complexity
+## Code Complexity
 
 ```
   function add(a, b) { return a + b }
@@ -212,7 +194,7 @@ Show technical debt
 
 
 
-[risk-map](http://glebbahmutov.com/risk-map)
+[risk-map](http://glebbahmutov.com/risk-map) = coverage + complexity
 
 ![risk-map](images/risk-map.jpg)
 
@@ -220,24 +202,47 @@ Show technical debt
 
 Speed up test execution
 
+## Test overlap analysis
+
+1. Run each unit test separately
+2. Keep track of source files covered by each unit test
 
 
+
+
+![sub as add](images/sub-as-add-coverage.jpg)
+
+## Test / code overlap by file
+
+```
+                   add     sub
+addition test      100%    0%
+subtraction test   100%    100%
+```
+
+If running **subtraction test**, do not run **addition test**
+
+At least, run **subtraction test** first
+
+
+
+
+## Test / code overlap among files
 
 Every test updates local [*untested*](https://npmjs.org/package/untested) database
 
 ```
-gt mathTests.js
+$ gt mathTests.js
 // mathTests.js covers math.js AND utils.js
 
-gt utilsTest.js
+$ gt utilsTest.js
 // utilsTest.js covers utils.js
 
 // edit utils.js
-
-untested
+$ untested
 // runs utilsTest.js AND mathTests.js
 ```
-
+works great with [pre-git](https://github.com/bahmutov/pre-git) hooks
 
 ## Problems
 
@@ -359,6 +364,10 @@ Large tests
 Tests try to verify that the user features are working.
 
 Covering all source code is impossible.
+
+**note:** top level project can still set a test coverage limit
+for each of its parts.
+
 
 
 

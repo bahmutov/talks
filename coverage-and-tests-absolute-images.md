@@ -73,6 +73,15 @@ test('addition', function () {
 });
 ```
 
+## Coverage tools
+
+JavaScript and related [istanbul](https://github.com/gotwarlost/istanbul)
+
+Java and related [Emma](http://emma.sourceforge.net/)
+
+Everything else: see [c2.com](http://c2.com/cgi/wiki?CodeCoverageTools)
+
+
 ## Flexibility
 
 ```
