@@ -360,6 +360,10 @@ Just like Makefile, grunt uses temp files to pass source between tasks,
 * Gruntfile complexity
 * disk I/O is slow
 
+---
+
+![gulp logo](https://raw.github.com/gulpjs/artwork/master/gulp.png)
+
 ## Gulpjs
 
 New kid on the block [gulpjs](http://gulpjs.com/)
