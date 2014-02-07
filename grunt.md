@@ -31,33 +31,29 @@ No
 
 Oldest (?) technology still in use
 
-```
-all: dist/app.js dist/index.html
+    all: dist/app.js dist/index.html
 
-dist/app.js: tmp/index.js libs/jquery.js
-  concat #$% &$& %$& %$^@!^
-  cp -f -y ???
+    dist/app.js: tmp/index.js libs/jquery.js
+      concat #$% &$& %$& %$^@!^
+      cp -f -y ???
 
-*.tmp.js: ($@.*.js)
-  uglify @$
-```
+    *.tmp.js: ($@.*.js)
+      uglify @$
 
 ## example.mk
 
 Very non friendly syntax
 
-```
-include $(BUILD)/makefiles/bootstrap.mk
-include $(INCLUDE_DIR)/module_interface.mk
-$(foreach R,$(call REQUIREMENTS,.),\
-    $(eval $(call BUILD_REQUIREMENT,$(R))))
-...
-# typical command
-$(JAVAEXE) -Xms512m -Xmx512m -cp "$(DOJO_PATH)/util/shrinksafe/js.jar$(PATH_SEPARATOR)$(DOJO_PATH)/util/closureCompiler/compiler.jar$(PATH_SEPARATOR)$(DOJO_PATH)/util/shrinksafe/shrinksafe.jar" \
-org.mozilla.javascript.tools.shell.Main $(DOJO_PATH)/dojo/dojo.js baseUrl=$(DOJO_PATH)/dojo load=build --profile $(1) $(BUILDMODE)
-@echo "Dojo returned"
-...
-```
+    include $(BUILD)/makefiles/bootstrap.mk
+    include $(INCLUDE_DIR)/module_interface.mk
+    $(foreach R,$(call REQUIREMENTS,.),\
+        $(eval $(call BUILD_REQUIREMENT,$(R))))
+    ...
+    # typical command
+    $(JAVAEXE) -Xms512m -Xmx512m -cp "$(DOJO_PATH)/util/shrinksafe/js.jar$(PATH_SEPARATOR)$(DOJO_PATH)/util/closureCompiler/compiler.jar$(PATH_SEPARATOR)$(DOJO_PATH)/util/shrinksafe/shrinksafe.jar" \
+    org.mozilla.javascript.tools.shell.Main $(DOJO_PATH)/dojo/dojo.js baseUrl=$(DOJO_PATH)/dojo load=build --profile $(1) $(BUILDMODE)
+    @echo "Dojo returned"
+    ...
 
 ## Ant and Maven
 
@@ -81,7 +77,7 @@ Manages dependencies locally and in central repo.
 * inflexible
 * super verbose XML configuration
   * all commands through plugins
-(webgui pom.xml is 590 loc, 27KB, jslint, minification, testing)
+(pom.xml > 500 loc commong for just jslint, minification and testing)
 * slow
 * Java-based
 
@@ -342,20 +338,65 @@ Typical plugin to delete files / folders.
 
 [Grunt boilerplate tutorial](http://integralist.co.uk/Grunt-Boilerplate.html)
 
+## The problems
+
+Just like Makefile, grunt uses temp files to pass source between tasks,
+[example](https://github.com/bahmutov/local-angular-development/blob/master/Gruntfile.js)
+
+* Gruntfile complexity
+* disk I/O is slow
+
+## Gulpjs
+
+New kid on the block [gulpjs](http://gulpjs.com/)
+
+Based on Nodejs event streams:
+
+    var fs = require("fs");
+    var zlib = require("zlib");
+    fs.createReadStream("input/people.csv.gz")
+        .pipe(zlib.createGunzip())
+        .pipe(fs.createWriteStream("output/people.csv"));
+
+## Pipeline data
+
+    sudo npm install -g gulp
+    npm install --save-dev gulp gulp-util
+    // gulpfile.js
+    var gulp = require('gulp');
+    gulp.task('default', function(){
+        gulp.src('./client/templates/*.jade')
+            .pipe(jade())
+            .pipe(minify())
+            .pipe(gulp.dest('./build/minified_templates'));
+    });
+
+## Grunt vs Gulp
+
+Good comparison [post](http://jaysoo.ca/2014/01/27/gruntjs-vs-gulpjs/).
+Due to lower I/O Gulp is much faster.
+
+Grunt 0.5 will introduce streams.
+
+---
+![grunt flow](https://raw2.github.com/bahmutov/talks/master/images/grunt-flow.png)
+
+---
+![gulp flow](https://raw2.github.com/bahmutov/talks/master/images/gulp-flow.png)
 
 ## The End
 
 **[Grunt](http://gruntjs.com/)**
 
 * simple, quick, easy
-* all the tools for front end development
+* all the tools (plugins) for front end development
 * great API for writing plugins
 * does NOT manage dependencies
   * use [npm](https://npmjs.org/), [bower](http://bower.io/), [jspm](http://jspm.io/)
 
 ---
 
-![get your grunt on](images/grunt-on.png)
+![get your grunt on](https://raw2.github.com/bahmutov/talks/master/images/grunt-on.png)
 
 
 [slides-now-footer]: "Grunt"
