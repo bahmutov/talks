@@ -107,7 +107,7 @@ Latest version **0.4.1** - major rewrite after 0.3.0
 
 Install [nodejs](http://nodejs.org/), server-side JavaScript engine.
 
-  npm install -g grunt-cli
+    npm install -g grunt-cli
 
 Grunt, plugins and project settings are CommonJs modules.
 
@@ -118,9 +118,9 @@ Create sample project `npm init`
 
 Add **grunt** and a few plugins
 
-  npm i grunt --save
-  npm i grunt-contrib-jshint --save
-  npm i matchdep --save
+    npm i grunt --save
+    npm i grunt-contrib-jshint --save
+    npm i matchdep --save
 
 Try running `grunt`
 
@@ -148,17 +148,17 @@ module.exports = function(grunt) {
 
 ## Flexibility
 
-  // runs jshint task
-  grunt jshint
+    // runs jshint task
+    grunt jshint
 
-  // runs another task
-  grunt pre-commit
+    // runs another task
+    grunt pre-commit
 
-  // run 'default', ignore errors
-  grunt --force
+    // run 'default', ignore errors
+    grunt --force
 
-  // see what's going on
-  grunt --verbose
+    // see what's going on
+    grunt --verbose
 
 ## Even more flexibility
 
@@ -172,8 +172,8 @@ grunt.initConfig({
 });
 ```
 
-  grunt jshint:src
-  grunt jshint:gruntfile
+    grunt jshint:src
+    grunt jshint:gruntfile
 
 ## Flexibility with tasks
 
@@ -281,7 +281,7 @@ Writing or updating a plugin is very easy
 Use [starter project](https://github.com/gruntjs/grunt-init-gruntplugin-sample) and look
 at [creating tasks](http://gruntjs.com/creating-tasks)
 
-```
+```js
 grunt.registerTask('foo', 'A sample',
   function(arg1, arg2) {
     grunt.log.writeln(this.name + ", " + arg1 + ", " + arg2);
