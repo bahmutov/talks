@@ -24,6 +24,9 @@ Think of each build step as a task
 
 No
 
+* portability
+* power
+
 ## Make
 
 Oldest (?) technology still in use
@@ -264,7 +267,7 @@ grunt.initConfig({
 28 official plugins have names like *grunt-contrib-**. Install them all using
 single [grunt-contrib](https://npmjs.org/package/grunt-contrib) module.
 
-1120 (!) user plugins have usually names like *grunt-**
+> 2k (!) user plugins have usually names like *grunt-**
 
 [Full list](http://gruntjs.com/plugins) - generates automatically
 from npm registry, modules tagged with *gruntplugin*
@@ -295,7 +298,6 @@ Typical plugin to delete files / folders.
 [README.md](https://github.com/gruntjs/grunt-contrib-clean)
 
 [Source code](https://github.com/gruntjs/grunt-contrib-clean/blob/master/tasks/clean.js)
-
 
 ## Notable plugins
 
@@ -338,8 +340,14 @@ Typical plugin to delete files / folders.
 
 * simple, quick, easy
 * all the tools for front end development
+* great API for writing plugins
 * does NOT manage dependencies
   * use [npm](https://npmjs.org/), [bower](http://bower.io/), [jspm](http://jspm.io/)
+
+---
+
+![get your grunt on](images/grunt-on.png)
+
 
 [slides-now-footer]: "Grunt"
 [slides-now-theme]: "cube"
