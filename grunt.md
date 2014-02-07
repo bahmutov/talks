@@ -20,9 +20,7 @@ Dr. Gleb Bahmutov, PhD
 
 Think of each build step as a task
 
-## Shell scripts
-
-No
+## Shell scripts: STOP FOR THE LOVE OF GOD
 
 * portability
 * power
@@ -103,7 +101,7 @@ Latest version **0.4.1** - major rewrite after 0.3.0
 
 Install [nodejs](http://nodejs.org/), server-side JavaScript engine.
 
-    npm install -g grunt-cli
+    sudo npm install -g grunt-cli
 
 Grunt, plugins and project settings are CommonJs modules.
 
@@ -121,8 +119,6 @@ Add **grunt** and a few plugins
 Try running `grunt`
 
 ## Gruntfile.js
-
-
 
 ```
 module.exports = function(grunt) {
@@ -156,27 +152,25 @@ module.exports = function(grunt) {
     // see what's going on
     grunt --verbose
 
-## Even more flexibility
-
+---
+### task / goals / options
 ```js
 grunt.initConfig({
-    jshint: {
+    jshint: { // grunt jshint
         options: {
             // applies to all subtasks
         },
-        sourceFiles: {
+        sourceFiles: { // grunt jshint:sourceFiles
             options: {
                 // add options for some files
             },
             src: 'src/**/*.js'
         },
-        testFiles: {
+        testFiles: { // grunt jshint:testFiles
             src: 'test/**/*.js'
         }
     }
 });
-// grunt jshint:src
-// grunt jshint:gruntfile
 ```
 
 ## Flexibility with tasks
@@ -248,6 +242,18 @@ module.exports = function(grunt) {
 Or pass *filter* function to see all filenames for a task, see
 [Files](http://gruntjs.com/configuring-tasks#files)
 
+## timing tasks
+
+Use [time-grunt](https://github.com/sindresorhus/time-grunt)
+
+    module.exports = function(grunt) {
+        require('time-grunt')(grunt);
+        grunt.initConfig({
+            ...
+
+---
+
+![time-grunt screenshot](https://raw2.github.com/sindresorhus/time-grunt/master/screenshot.png)
 
 ## Run tasks in parallel
 
@@ -321,6 +327,14 @@ Typical plugin to delete files / folders.
 [contrib-watch](https://npmjs.org/package/grunt-contrib-watch),
 [grunt-notify](https://github.com/dylang/grunt-notify)
 
+## My grunt plugins
+
+* [grunt-nice-package](https://github.com/bahmutov/grunt-nice-package) for *nice-package*
+* [grunt-clean-console](https://github.com/bahmutov/grunt-clean-console) for *clean-console*
+* [grunt-npm2bower-sync](https://github.com/bahmutov/grunt-npm2bower-sync)
+* [grunt-deps-ok](https://github.com/bahmutov/grunt-deps-ok) for *deps-ok*
+* [grunt-jshint-solid](https://github.com/bahmutov/grunt-jshint-solid) for *jshint-solid*
+
 ## More resources
 
 ### Examples
@@ -378,10 +392,16 @@ Due to lower I/O Gulp is much faster.
 
 Grunt 0.5 will introduce streams.
 
+My gulp plugin [gulp-dotdot](https://github.com/bahmutov/gulp-dotdot).
+
 ---
+### grunt flow
+
 ![grunt flow](https://raw2.github.com/bahmutov/talks/master/images/grunt-flow.png)
 
 ---
+### gulp flow
+
 ![gulp flow](https://raw2.github.com/bahmutov/talks/master/images/gulp-flow.png)
 
 ## The End
