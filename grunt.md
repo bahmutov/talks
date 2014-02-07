@@ -162,18 +162,26 @@ module.exports = function(grunt) {
 
 ## Even more flexibility
 
-```
+```js
 grunt.initConfig({
-  jshint: {
-    src: '*.js',
-    gruntfile: 'gruntfile.js',
-    dist: 'dist/*.app.js'
-  }
+    jshint: {
+        options: {
+            // applies to all subtasks
+        },
+        sourceFiles: {
+            options: {
+                // add options for some files
+            },
+            src: 'src/**/*.js'
+        },
+        testFiles: {
+            src: 'test/**/*.js'
+        }
+    }
 });
+// grunt jshint:src
+// grunt jshint:gruntfile
 ```
-
-    grunt jshint:src
-    grunt jshint:gruntfile
 
 ## Flexibility with tasks
 
@@ -279,7 +287,8 @@ Most plugins upgraded to work with grunt **0.4**
 Writing or updating a plugin is very easy
 
 Use [starter project](https://github.com/gruntjs/grunt-init-gruntplugin-sample) and look
-at [creating tasks](http://gruntjs.com/creating-tasks)
+at [creating tasks](http://gruntjs.com/creating-tasks).
+See [api docs](http://gruntjs.com/api/grunt).
 
 ```js
 grunt.registerTask('foo', 'A sample',
@@ -350,5 +359,5 @@ Typical plugin to delete files / folders.
 
 
 [slides-now-footer]: "Grunt"
-[slides-now-theme]: "cube"
+[slides-now-theme]: "bw"
 [slides-now-timer]: "45"
