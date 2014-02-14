@@ -20,7 +20,7 @@ Currently at Kensho: front-end quality, performance, robustness
 * Drop this presentation (Markdown file)
 into [slides-now](http://glebbahmutov.com/slides-now/)
 * Fullscreen, keyboard controls, themes,
-timers, links, images
+timers, links, images, syntax highlighting for code fragments
 * Offline mode
 
 ## Why?
@@ -34,13 +34,41 @@ fonts, positions, graphics and images...
 ```notes
 Markdown is very simple to remember, I don't need special tools
 to write and share one. Various tools can render from text: wikis,
-blogs, browser extensions. Biggest push came after github / bitbucket
+blogs, browser extensions, email. Biggest push came after github / bitbucket
 started rendering markdown README.md files by default in each folder
+```
+
+## Browser
+
+I consider HTML5 + JavaScript + CSS the new portable application
+platform:
+
+* Websites / web apps
+* mobile / compiled to native mobile
+* Win8, or compiled to native desktop apps
+
+```notes
+Consider the target demographics for slides-now - probably
+uses standards-compliant browsers (no < IE9). I can rely on latest
+markup and javascript APIs without worrying about browser quirks.
+This means the development is extremely fast. Same applies because
+use jQuery and AngularJs; they speed things up.
 ```
 
 ## Application Cache
 
-Need to be able to show presentation **without** internet
+Need to be able to show presentation **without** internet.
+Use `<html manifest="cache.manifest">` in *index.html*
+
+**benefit:** application appears very very fast.
+
+**downside:** need to refresh app twice
+
+```notes
+Browser application offline manifest lifecycle.
+Downside: user needs to refresh twice to get new version.
+```
+
 
     CACHE MANIFEST
     # version: 0.0.14
@@ -60,13 +88,13 @@ Need to be able to show presentation **without** internet
     # and any other external links
     *
 
-### benefit: application appears very very fast.
-
 ```notes
-Browser application offline manifest lifecycle.
+cache.manifest file from slides-now
+Lines starting with # are comments
+Several sections: CACHE MANIFEST, CACHE, NETWORK
 Google analytics is the only non-cached exception.
-Embedded timestampt in the manifest file.
-Downside: user needs to refresh twice to get new version.
+Embedded timestampt in the manifest file to let the browser
+know about the changes.
 ```
 
 [slides-now-footer]: "Slides-now by @bahmutov"
