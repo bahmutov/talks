@@ -35,7 +35,41 @@ fonts, positions, graphics and images...
 Markdown is very simple to remember, I don't need special tools
 to write and share one. Various tools can render from text: wikis,
 blogs, browser extensions, email. Biggest push came after github / bitbucket
-started rendering markdown README.md files by default in each folder
+started rendering markdown README.md files by default in each folder.
+Worst offender: Prezi with transition style over substance.
+
+Wanted Markdown because it is simple to share the content: it is just
+the text document one can read.
+```
+
+## Slide format
+
+    # - main presentation title
+    ## - starts new slide (or --- or triple blank line)
+    * - bullet list
+    [title](url) - external link, opens in new tab
+    ![title](url) - embed image
+
+```notes
+This is just semantic convention for slides-now that
+corresponds to the way most Markdown to HTML parsers work:
+# title -> <h1>title</h1>
+## text -> <h2>text</h2>
+```
+
+## Slides-now specific options
+
+Tags at the end of the presentation to control
+the visual appearance.
+
+    [slides-now-footer]: "footer text"
+    [slides-now-theme]: "cube",
+    [slides-now-timer]: "20"
+
+These are ignored other Markdown viewers (or are harmless)
+
+```notes
+Full list of options at http://glebbahmutov.com/slides-now/README.md
 ```
 
 ## Browser
