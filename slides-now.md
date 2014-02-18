@@ -42,7 +42,7 @@ Wanted Markdown because it is simple to share the content: it is just
 the text document one can read.
 ```
 
-## Slide format
+## Slide markdown format
 
     # - main presentation title
     ## - starts new slide (or --- or triple blank line)
@@ -63,7 +63,7 @@ Tags at the end of the presentation to control
 the visual appearance.
 
     [slides-now-footer]: "footer text"
-    [slides-now-theme]: "cube",
+    [slides-now-theme]: "cube"
     [slides-now-timer]: "20"
 
 These are ignored other Markdown viewers (or are harmless)
@@ -131,5 +131,73 @@ Embedded timestampt in the manifest file to let the browser
 know about the changes.
 ```
 
+## Bespoke plugins
+
+## Building the app
+
+* Code organization
+* Gruntfile
+* 3rd party code
+
+## Reusing slides-now
+
+* Stand alone version
+* Chrome extension
+
+## Themes
+
+```notes
+Slide appearance: fonts, colors, sizes
+Good example [full.css](css/themes/full.css)
+```
+
+---
+    /* Full slide theme without a border */
+    .full {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .full section.bespoke-slide {
+      background: rgb(255, 255, 255);
+      border: none;
+    }
+    .full a:hover {
+      background: rgb(225, 225, 225);
+    }
+    .full a {
+      color: rgba(30, 30, 30, 1);
+      text-decoration: underline;
+    }
+    .full h1,
+    .full h2,
+    .full h3 {
+      color: rgb(250, 10, 10);
+    }
+    .full section.bespoke-before {
+      -webkit-transform: translate3d(-100%, 0, 0);
+      -moz-transform: translate3d(-100%, 0, 0);
+      -ms-transform: translate3d(-100%, 0, 0);
+      -o-transform: translate3d(-100%, 0, 0);
+      transform: translate3d(-100%, 0, 0);
+    }
+    .full section.bespoke-after {
+      -webkit-transform: translate3d(100%, 0, 0);
+      -moz-transform: translate3d(100%, 0, 0);
+      -ms-transform: translate3d(100%, 0, 0);
+      -o-transform: translate3d(100%, 0, 0);
+      transform: translate3d(100%, 0, 0);
+    }
+    .full section.bespoke-inactive code {
+      visibility: visible;
+    }
+    /* other UI elements */
+    .full .code-box-expand-icon {
+      opacity: 0.2 !important;
+    }
+    .full .code-box-expand-icon:hover {
+      opacity: 0.5 !important;
+    }
+
+
+[slides-now-theme]: "full"
 [slides-now-footer]: "Slides-now by @bahmutov"
 [slides-now-timer]: "30"
