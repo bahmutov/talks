@@ -197,6 +197,14 @@ Good example [full.css](css/themes/full.css)
       opacity: 0.5 !important;
     }
 
+## Responsive design
+
+* Full screen, desktop, mobile
+
+```notes
+Font sizes, slide size, margins.
+What to do about mobile?
+```
 
 [slides-now-theme]: "full"
 [slides-now-footer]: "Slides-now by @bahmutov"
