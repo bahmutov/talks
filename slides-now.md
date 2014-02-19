@@ -202,6 +202,7 @@ Good example [full.css](css/themes/full.css)
 * Desktop
 * Full screen
 * mobile?
+  * [speakerdeck example](https://speakerdeck.com/lara/design-for-performance)
 
 ```notes
 Font sizes, slide size, margins.
@@ -214,6 +215,10 @@ aweful!
 Finally gave up and used responsive JS to show plain content on mobile
 without creating slides.
 ```
+---
+![slides-now desktop](https://raw2.github.com/bahmutov/talks/master/images/slides-now-desktop.jpg)
+---
+![slides-now mobile](https://raw2.github.com/bahmutov/talks/master/images/slides-now-mobile.jpg)
 
 ## Future
 
