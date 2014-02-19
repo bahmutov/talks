@@ -199,12 +199,27 @@ Good example [full.css](css/themes/full.css)
 
 ## Responsive design
 
-* Full screen, desktop, mobile
+* Desktop
+* Full screen
+* mobile?
 
 ```notes
 Font sizes, slide size, margins.
-What to do about mobile?
+
+What to do about mobile? Tried small screen slide factor -
+does not look good, hard to control with swipes.
+Try opening https://speakerdeck.com/lara/design-for-performance on a phone -
+aweful!
+
+Finally gave up and used responsive JS to show plain content on mobile
+without creating slides.
 ```
+
+## Future
+
+* Controlling the presentation remotely
+* Inserting diagrams using browser JS libraries
+* Cool video tricks
 
 [slides-now-theme]: "full"
 [slides-now-footer]: "Slides-now by @bahmutov"
