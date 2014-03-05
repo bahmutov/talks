@@ -16,3 +16,4 @@ gt depends on 187 modules
 ```
 
 [slides-now-footer]: "@bahmutov"
+[slides-now-theme]: "full"
