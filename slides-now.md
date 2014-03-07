@@ -49,6 +49,7 @@ the text document one can read.
     * - bullet list
     [title](url) - external link, opens in new tab
     ![title](url) - embed image
+    ![title fullscreen](url) - embed image as slide background
 
 ```notes
 This is just semantic convention for slides-now that
@@ -216,9 +217,10 @@ Finally gave up and used responsive JS to show plain content on mobile
 without creating slides.
 ```
 ---
-![slides-now desktop](https://raw2.github.com/bahmutov/talks/master/images/slides-now-desktop.jpg)
+![slides-now desktop fullscreen](https://raw2.github.com/bahmutov/talks/master/images/slides-now-desktop.jpg)
+
 ---
-![slides-now mobile](https://raw2.github.com/bahmutov/talks/master/images/slides-now-mobile.jpg)
+![slides-now mobile fullscreen](https://raw2.github.com/bahmutov/talks/master/images/slides-now-mobile.jpg)
 
 ## Future
 
