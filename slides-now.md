@@ -5,6 +5,10 @@ presentation in your browser
 
 Dr. Gleb Bahmutov, PhD
 
+[Kensho](http://www.kensho.com/), ex- lots of companies
+
+Win32 -> C/C++/Java/C#/CoffeeScript/JavaScript -> Node/Browser
+
 [@bahmutov](https://twitter.com/bahmutov),
 [glebbahmutov.com](http://glebbahmutov.com/)
 

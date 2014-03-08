@@ -1,7 +1,7 @@
 # Dependencies: best practices for Nodejs
 
 > If I have seen further it is by standing on the
-> sholders of (tiny) giants
+> shoulders of (tiny) giants
 >                               Sir Isaac Newton
 
 ---
@@ -13,6 +13,19 @@ almost flawless 100 nanometer thick atomic layers.
 
 Source: http://www.bnl.gov/energy/ces/news.asp?a=1447&t=pr
 ```
+
+## About me
+
+Dr. Gleb Bahmutov, PhD
+
+[Kensho](http://www.kensho.com/), ex- lots of companies
+
+Win32 -> C/C++/Java/C#/CoffeeScript/JavaScript -> Node/Browser
+
+[@bahmutov](https://twitter.com/bahmutov),
+[glebbahmutov.com](http://glebbahmutov.com/)
+
+~ [60 modules](https://www.npmjs.org/~bahmutov) on NPM registry, 9 plugins for Grunt
 
 ---
 ![large red flags fullscreen](https://raw.github.com/bahmutov/talks/master/images/red-flags.jpg)
@@ -29,9 +42,11 @@ DB + API, DB + API + front-end + worker machines
 
 ## Smaller red flags
 
-* Project setup fromt clean takes longer than 10 minutes.
+* From clean to running > 10 minutes
 * Insignificance
 * Reuse our code somewhere else
+
+In general, [large projects are never finished](http://bahmutov.calepin.co/large-projects-are-never-finished.html)
 
 ```notes
 - I have been to teams where setting up tools took days.
@@ -40,7 +55,10 @@ jQuery checkout and build takes 60 - 90 seconds!
 - We have 10k of lines of code, lets get better return on investment by reusing them.
 ```
 
-## It depends
+---
+![GT depends on fullscreen](https://raw.github.com/bahmutov/talks/master/images/gt-dependencies.png)
+
+## It really depends
 
 `npm ls` - shows the dependency tree
 
