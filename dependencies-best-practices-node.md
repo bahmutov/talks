@@ -40,7 +40,7 @@ refactored and split into smaller units
 DB + API, DB + API + front-end + worker machines
 ```
 
-## Smaller red flags
+## &#9873; small red flags
 
 * From clean to running > 10 minutes
 * Insignificance
