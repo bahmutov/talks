@@ -74,6 +74,41 @@ jQuery checkout and build takes 60 - 90 seconds!
 * Slow feature development
 * Lots of trip wires
 
+## Software complexity
+
+Hard to develop software suffers from an interaction problem.
+Each item can interact with every other item in the
+project.
+
+![Software communication complexity](https://raw.github.com/bahmutov/talks/master/images/3-players.png)
+
+```notes
+In a source file with 3 lines, or 3 variables, whatever metric
+you pick, 3 things interact.
+```
+
+---
+![Project grows fullscreen](https://raw.github.com/bahmutov/talks/master/images/10-players.jpg)
+
+```notes
+As the number of lines increases, each item can interact with other items.
+There is no physical separation, aside from folder structure, which
+is easily broken.
+Total number of communication links grows geometrically n*(n-1)/2, soon overwhelming
+the mental capacity of any team. Thus the project calcifies, and new things
+are harder to add without breaking the existing functionality.
+```
+
+---
+![Application assembly fullscreen](https://raw.github.com/bahmutov/talks/master/images/3-projects.png)
+
+```notes
+Physically splitting the project in manageable chunks via the dependency
+cuts the number of ways different parts can interact.
+Try very hard to have a graph without loops (single root tree, with root being
+the ultimate application)
+```
+
 ## Nodejs
 
 Makes it very easy to split a project into *individual modules*.
@@ -88,8 +123,6 @@ Most problems recently due the public registry reliability.
 The number of listed and stored (as tar zip archives) packages
 reached 63k.
 ```
-
-
 
 ---
 ![GT depends on fullscreen](https://raw.github.com/bahmutov/talks/master/images/gt-dependencies.png)
