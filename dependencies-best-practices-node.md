@@ -83,8 +83,7 @@ project.
 ![Software communication complexity](https://raw.github.com/bahmutov/talks/master/images/3-players.png)
 
 ```notes
-In a source file with 3 lines, or 3 variables, whatever metric
-you pick, 3 things interact.
+In a source file with 3 lines/variables/files 3 things interact.
 ```
 
 ---
@@ -103,7 +102,7 @@ are harder to add without breaking the existing functionality.
 ![Application assembly fullscreen](https://raw.github.com/bahmutov/talks/master/images/3-projects.png)
 
 ```notes
-Physically splitting the project in manageable chunks via the dependency
+Physically splitting the project into manageable chunks
 cuts the number of ways different parts can interact.
 Try very hard to have a graph without loops (single root tree, with root being
 the ultimate application)
@@ -132,6 +131,9 @@ reached 63k.
     npm info chalk
     npm home chalk
     npm install chalk --save
+    // index.js
+    require('chalk');
+    console.log( chalk.blue('Hello world!') );
 
 ---
 ![if (wheel) return 'invented' fullscreen](https://raw.github.com/bahmutov/talks/master/images/3-projects-use-3rd-party.png)
@@ -228,8 +230,8 @@ The most powerful 30-second argument for using git + nodejs.
 
 ## Dependency management
 
-> Are we replacing the simplicity and consistency of a single project
-with a dependency mess?
+> Are we replacing the simplicity and consistency of
+> a single project with a dependency mess?
 
 ```notes
 Yes.
