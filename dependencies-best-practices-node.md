@@ -124,6 +124,40 @@ The number of listed and stored (as tar zip archives) packages
 reached 63k.
 ```
 
+## NPM in action
+
+> I need ANSI colors in my project
+
+    npm search colors
+    npm info chalk
+    npm home chalk
+    npm install chalk --save
+
+---
+![if (wheel) { return 'invented'; } fullscreen](https://raw.github.com/bahmutov/talks/master/images/gt-dependencies.png)
+
+```notes
+Do not reinvent the wheel. Search for a module that does what you need,
+is being updated and has good readme and tests
+```
+
+## Where to find 3rd party modules?
+
+* https://www.npmjs.org/ search by keyword
+* http://www.jsdb.io/, http://www.javascriptoo.com/
+* http://microjs.com/
+
+```notes
+jsdb displays average time between commits, number of active committers, CDN urls
+javascriptoo has nice demos for every project
+```
+
+## New and updates 3rd party modules
+
+* http://www.echojs.com/
+* http://dailyjs.com/
+* [newsletters](http://bahmutov.calepin.co/javascript-and-angularjs-learning-resources.html)
+
 ---
 ![GT depends on fullscreen](https://raw.github.com/bahmutov/talks/master/images/gt-dependencies.png)
 
@@ -158,23 +192,6 @@ https://david-dm.org/jashkenas/coffee-script#info=devDependencies&view=tree
 
 about 40 dependencies total
 ```
-
-## Where to find 3rd party modules?
-
-* https://www.npmjs.org/ search by keyword
-* http://www.jsdb.io/, http://www.javascriptoo.com/
-* http://microjs.com/
-
-```notes
-jsdb displays average time between commits, number of active committers, CDN urls
-javascriptoo has nice demos for every project
-```
-
-## New and updates 3rd party modules
-
-* http://www.echojs.com/
-* http://dailyjs.com/
-* [newsletters](http://bahmutov.calepin.co/javascript-and-angularjs-learning-resources.html)
 
 [slides-now-footer]: "@bahmutov"
 [slides-now-theme]: "full"
