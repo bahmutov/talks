@@ -134,7 +134,7 @@ reached 63k.
     npm install chalk --save
 
 ---
-![if (wheel) { return 'invented'; } fullscreen](https://raw.github.com/bahmutov/talks/master/images/gt-dependencies.png)
+![if (wheel) return 'invented' fullscreen](https://raw.github.com/bahmutov/talks/master/images/3-projects-use-3rd-party.png)
 
 ```notes
 Do not reinvent the wheel. Search for a module that does what you need,
@@ -157,6 +157,51 @@ javascriptoo has nice demos for every project
 * http://www.echojs.com/
 * http://dailyjs.com/
 * [newsletters](http://bahmutov.calepin.co/javascript-and-angularjs-learning-resources.html)
+
+## Enterprise considerations
+
+* License (look for MIT/BSD)
+* Use [node-license-sniffer](https://github.com/mwilliamson/node-license-sniffer)
+* Offline NPM cache (for CI agents for example) see `npm config get cache`
+
+---
+![save time and money fullscreen](https://raw.github.com/bahmutov/talks/master/images/3-projects-open-source.png)
+
+```notes
+Second great step when splitting a large project - open source
+parts that are not your primary business.
+
+The argument is economic: you will not have to maintain
+source control (github), continuous build (Travis), code coverage (coveralls.io),
+browsers (saucelabs). Plus you get actual people trying to use your module, hopefully
+giving you feedback or even code contributions.
+```
+
+## Open source increases antifragility
+
+**Fragile** = breaks quickly under stress: porcelain mug, glass statues, modern financial sector.
+
+**Antifragile** = gets stronger under stress: nature, winning team during playoffs.
+
+Open sourcing exposes package to low-level stress (code review, unit testing, reuse),
+making it more likely to withstand high stress (unexpected production issue).
+For more info see [book review](http://bahmutov.calepin.co/review-antifragile-by-nassim-nicholas-taleb.html)
+
+```notes
+One key trait of large projects: they are very brittle. Most parts
+never were reused or tested under different circumstances, and are shielded from wide code review,
+making them likely to deteriorate in quality over time.
+```
+
+## Good package practices
+
+* Use [grunt-nice-package](https://github.com/bahmutov/grunt-nice-package)
+* Setup tests / jshint [Travis-ci](https://travis-ci.org/)
+* Use [status badges](http://bahmutov.calepin.co/project-status-badges.html)
+* Generate README using [grunt-readme](https://www.npmjs.org/package/grunt-readme)
+
+---
+![60 seconds fullscreen](https://raw.github.com/bahmutov/talks/master/images/readme-example.png)
 
 ---
 ![GT depends on fullscreen](https://raw.github.com/bahmutov/talks/master/images/gt-dependencies.png)
