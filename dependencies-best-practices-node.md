@@ -208,15 +208,18 @@ making them likely to deteriorate in quality over time.
 * Use [semantic versioning](http://semver.org/) `major.minor.patch`
 * Answer opened issues quickly
 * Describe how your project is different
+* Use README.md, avoid wiki
 
 ---
 ![Clone/fix fullscreen](https://raw.github.com/bahmutov/talks/master/images/3-projects-fix.png)
 
 ## Clone / fix
 
-    git fork public project
-    git clone
-    "name": "git:your server url/name# tag or commit"
+    git fork public project to your private Git server
+    in package.json
+    "dependencies": {
+      "name": "git:your server url/name # tag or commit"
+    }
 
 The most powerful 30-second argument for using git + nodejs.
 
