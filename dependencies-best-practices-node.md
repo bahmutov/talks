@@ -203,6 +203,25 @@ making them likely to deteriorate in quality over time.
 ---
 ![60 seconds fullscreen](https://raw.github.com/bahmutov/talks/master/images/readme-example.png)
 
+## Great practices
+
+* Use [semantic versioning](http://semver.org/) `major.minor.patch`
+* Answer opened issues quickly
+* Describe how your project is different
+
+---
+![Clone/fix fullscreen](https://raw.github.com/bahmutov/talks/master/images/3-projects-fix.png)
+
+## Clone / fix
+
+    git fork public project
+    git clone
+    "name": "git:your server url/name# tag or commit"
+
+The most powerful 30-second argument for using git + nodejs.
+
+### Pay forward: request your fixes to be pulled back
+
 ---
 ![GT depends on fullscreen](https://raw.github.com/bahmutov/talks/master/images/gt-dependencies.png)
 
