@@ -140,7 +140,7 @@ reached 63k.
 
 ```notes
 Do not reinvent the wheel. Search for a module that does what you need,
-is being updated and has good readme and tests
+is updated frequently and has good readme and tests
 ```
 
 ## Where to find 3rd party modules?
@@ -274,6 +274,12 @@ https://david-dm.org/jashkenas/coffee-script#info=devDependencies&view=tree
 
 about 40 dependencies total
 ```
+
+## TODO next-update
+
+## TODO next-update-stats
+
+## TODO next-updater
 
 [slides-now-footer]: "@bahmutov"
 [slides-now-theme]: "full"
