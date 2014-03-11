@@ -206,6 +206,7 @@ making them likely to deteriorate in quality over time.
 ## Great practices
 
 * Use [semantic versioning](http://semver.org/) `major.minor.patch`
+  * Cannot `npm publish -f` anymore!
 * Answer opened issues quickly
 * Describe how your project is different
 * Use README.md, avoid wiki
@@ -224,6 +225,18 @@ making them likely to deteriorate in quality over time.
 The most powerful 30-second argument for using git + nodejs.
 
 ### Pay forward: request your fixes to be pulled back
+
+## Dependency management
+
+> Are we replacing the simplicity and consistency of a single project
+with a dependency mess?
+
+```notes
+Yes.
+- the mess is manageable.
+- the mess maps nicely to the software development:
+different parts are developed at different speeds.
+```
 
 ---
 ![GT depends on fullscreen](https://raw.github.com/bahmutov/talks/master/images/gt-dependencies.png)
