@@ -12,6 +12,16 @@ custom-built molecular-beam epitaxy (MBE) machine builds
 almost flawless 100 nanometer thick atomic layers.
 
 Source: http://www.bnl.gov/energy/ces/news.asp?a=1447&t=pr
+
+Often my projects look and feel like this machine:
+* too complex
+* too complicated
+* too hard to maintain or improve
+* really really expensive both in terms of time and money
+
+Nodejs is an interesting platform where an alternative to
+single project that does everything is possible via
+a very nice dependency mechanism is actually working in practice.
 ```
 
 ## About me
@@ -38,6 +48,9 @@ refactored and split into smaller units
 - inability to unit test a specific feature
 - two or more programming languages or environments:
 DB + API, DB + API + front-end + worker machines
+
+Not red flags: size of the code base, number of lines,
+number of people, software methodology.
 ```
 
 ## &#9873; small red flags
@@ -54,6 +67,29 @@ jQuery checkout and build takes 60 - 90 seconds!
 - Hard to increase quality, since every positive change feels insignificant
 - We have 10k of lines of code, lets get better return on investment by reusing them.
 ```
+
+## Problem
+
+* Large project
+* Slow feature development
+* Lots of trip wires
+
+## Nodejs
+
+Makes it very easy to split a project into *individual modules*.
+The dependency mechanism is managed by *Node Package Manager.*
+
+* It is an ordinary package itself [npm](https://www.npmjs.org/package/npm)
+* `sudo npm update -g npm`
+
+```notes
+Comes with nodejs install, generally works.
+Most problems recently due the public registry reliability.
+The number of listed and stored (as tar zip archives) packages
+reached 63k.
+```
+
+
 
 ---
 ![GT depends on fullscreen](https://raw.github.com/bahmutov/talks/master/images/gt-dependencies.png)
