@@ -424,5 +424,21 @@ about 40 dependencies total
 
 * [Heroku: 10 Habits of a Happy Node Hacker](https://blog.heroku.com/archives/2014/3/11/node-habits)
 
+## Conclusions
+
+Splitting a large project into smaller ones and assembling them
+makes it **easier** to do **small** things:
+
+* understanding
+* testing
+* reusing
+
+```notes
+You are admitting that you are a human being: your mental capacity
+has a hard limit: it can only keep 4-7 things in your immediate memory at a time.
+Splitting things into dependencies allows to remove bunch of things from
+your mind, and allows the concentration on immediate task at hand.
+```
+
 [slides-now-footer]: "@bahmutov"
 [slides-now-theme]: "full"
