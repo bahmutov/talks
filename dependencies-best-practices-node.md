@@ -135,6 +135,12 @@ function add(a, b) ...
 }
 ```
 
+```notes
+Same approach to package as with functions.
+Give good name (=function name), declare what is needs (dependencies = arguments),
+and Node will know how to require('my-utils') by loading index.js
+```
+
 ## index.js
 
 ```js
@@ -211,7 +217,8 @@ Set `"private": true`
 
 ```notes
 Do not reinvent the wheel. Search for a module that does what you need,
-is updated frequently and has good readme and tests
+is updated frequently and has good readme and tests.
+Common examples: logging, async/callback handling
 ```
 
 ## Where to find 3rd party modules?
@@ -330,6 +337,25 @@ error message to run `npm install`. Also supports bower dependencies
 
 ## Hard problem: staying in sync
 
+See all outdated modules (recursively)
+
+`npm outdated` or `npm outdated --parseable|wc -l`
+
+```notes
+Each project is constantly getting out of date.
+The dependencies keep releasing versions, but you have not switched.
+This is a good feature: it protects you.
+Try `npm outdated` on any of your projects to see which
+dependencies are out of date.
+```
+
+---
+![npm outdated fullscreen](https://raw.github.com/bahmutov/talks/master/images/npm-outdated.png)
+
+## 1 level only
+
+You control only top level dependencies.
+
 ---
 ![GT depends on fullscreen](https://raw.github.com/bahmutov/talks/master/images/gt-dependencies.png)
 
@@ -368,6 +394,9 @@ about 40 dependencies total
 ## TODO next-update
 
 ## TODO next-update-stats
+
+---
+![next-update stats fullscreen](https://raw.github.com/bahmutov/talks/master/images/next-update-stats-cli.png)
 
 ## TODO next-updater
 
