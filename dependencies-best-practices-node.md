@@ -108,6 +108,59 @@ Try very hard to have a graph without loops (single root tree, with root being
 the ultimate application)
 ```
 
+## Physical separation
+
+* functions separate variables via scope
+* source files separate code
+* dependencies separate files
+
+```notes
+We use physical separation all the time: a function is
+language enforced scope separation for example.
+```
+
+## Clear boundary
+
+```js
+// function signature
+function add(a, b) ...
+
+// package.json
+{
+    "name": "my-utils",
+    "main": "index.js"
+    "dependencies": {
+        "another-module": "0.1.0"
+    }
+}
+```
+
+## index.js
+
+```js
+var a = require('another-module');
+// index.js
+if (module.parent) {
+    module.exports = ...
+} else {
+    // work as CLI
+}
+```
+
+### avoid
+
+```js
+var a = require('./node_modules/another-module/src/something.js');
+```
+
+## App assembly principles
+
+* Single repo per app
+* Shared code via separate repos via dependencies
+* Separate version control / version numbers
+
+[The 12 factor app](http://12factor.net/)
+
 ## Nodejs
 
 Makes it very easy to split a project into *individual modules*.
@@ -135,6 +188,24 @@ reached 63k.
     require('chalk');
     console.log( chalk.blue('Hello world!') );
 
+## Splitting large project
+
+* Starting a module
+* Replace parts with 3rd party
+* Open source parts
+* Clone 3rd party into private dependencies
+
+## Starting a module
+
+```
+npm init
+// answer questions
+```
+
+Set `"private": true`
+
+* Use [grunt-nice-package](https://github.com/bahmutov/grunt-nice-package)
+
 ---
 ![if (wheel) return 'invented' fullscreen](https://raw.github.com/bahmutov/talks/master/images/3-projects-use-3rd-party.png)
 
@@ -148,6 +219,7 @@ is updated frequently and has good readme and tests
 * https://www.npmjs.org/ search by keyword
 * http://www.jsdb.io/, http://www.javascriptoo.com/
 * http://microjs.com/
+* http://www.echojs.com/
 
 ```notes
 jsdb displays average time between commits, number of active committers, CDN urls
@@ -197,8 +269,7 @@ making them likely to deteriorate in quality over time.
 
 ## Good package practices
 
-* Use [grunt-nice-package](https://github.com/bahmutov/grunt-nice-package)
-* Setup tests / jshint [Travis-ci](https://travis-ci.org/)
+* Setup tests and jshint using [Travis-ci](https://travis-ci.org/)
 * Use [status badges](http://bahmutov.calepin.co/project-status-badges.html)
 * Generate README using [grunt-readme](https://www.npmjs.org/package/grunt-readme)
 
@@ -240,6 +311,25 @@ Yes.
 different parts are developed at different speeds.
 ```
 
+## Simple problem 1
+
+> package.json dependencies get out of sync with `node_modules`
+
+Use [deps-ok](https://github.com/bahmutov/deps-ok) and
+[grunt-deps-ok](https://github.com/bahmutov/grunt-deps-ok).
+Much faster than `npm outdated` because only checks top level
+dependencies` version numbers.
+
+```notes
+Package.json is stored in source control, and if someone updated
+dependency version declared there, other people sync the package.json
+but do not know if node_modules is outdated. Add grunt-deps-ok as
+first step to your grunt default pipeline and they will get a nice
+error message to run `npm install`. Also supports bower dependencies
+```
+
+## Hard problem: staying in sync
+
 ---
 ![GT depends on fullscreen](https://raw.github.com/bahmutov/talks/master/images/gt-dependencies.png)
 
@@ -280,6 +370,10 @@ about 40 dependencies total
 ## TODO next-update-stats
 
 ## TODO next-updater
+
+# More info
+
+* [Heroku: 10 Habits of a Happy Node Hacker](https://blog.heroku.com/archives/2014/3/11/node-habits)
 
 [slides-now-footer]: "@bahmutov"
 [slides-now-theme]: "full"
