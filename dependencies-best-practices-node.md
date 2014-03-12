@@ -283,6 +283,19 @@ making them likely to deteriorate in quality over time.
 ---
 ![60 seconds fullscreen](https://raw.github.com/bahmutov/talks/master/images/readme-example.png)
 
+```notes
+You have only a few seconds to grab attention.
+Please provide good short package description: multiple drafts are ok!
+Use badges to show if module is tested and up to date.
+Provide examples!
+
+This is extremely important for internal modules: you do not know who
+is going to use your module and what their level of expertise is.
+They could be a super expert or could be a novice. Give them enough information
+to decide if what you are offering fits their needs. They will do same to you.
+Please be kind to your audience.
+```
+
 ## Great practices
 
 * Use [semantic versioning](http://semver.org/) `major.minor.patch`
@@ -359,6 +372,10 @@ You control only top level dependencies.
 ---
 ![GT depends on fullscreen](https://raw.github.com/bahmutov/talks/master/images/gt-dependencies.png)
 
+```notes
+Great tool to see your dependencies, including badges https://david-dm.org/
+```
+
 ## It really depends
 
 `npm ls` - shows the dependency tree
@@ -392,6 +409,9 @@ about 40 dependencies total
 ```
 
 ## TODO next-update
+
+---
+![next update results fullscreen](https://raw.github.com/bahmutov/talks/master/images/next-update-command.png)
 
 ## TODO next-update-stats
 
