@@ -186,13 +186,15 @@ reached 63k.
 
 > I need ANSI colors in my project
 
-    npm search colors
-    npm info chalk
-    npm home chalk
-    npm install chalk --save
-    // index.js
-    require('chalk');
-    console.log( chalk.blue('Hello world!') );
+```
+npm search colors
+npm info chalk
+npm home chalk
+npm install chalk --save
+// index.js
+require('chalk');
+console.log( chalk.blue('Hello world!') );
+```
 
 ## Splitting large project
 
@@ -299,6 +301,13 @@ is going to use your module and what their level of expertise is.
 They could be a super expert or could be a novice. Give them enough information
 to decide if what you are offering fits their needs. They will do same to you.
 Please be kind to your audience.
+
+Badges:
+
+https://nodei.co/ - NPM info
+travis - build info
+coveralls - code coverage info
+david-dm.org - dependencies
 ```
 
 ## Great practices
@@ -308,6 +317,16 @@ Please be kind to your audience.
 * Answer opened issues quickly
 * Describe how your project is different
 * Use README.md, avoid wiki
+
+```notes
+If you project is only used internally you can use whatever version names:
+sprint numbers, week numbers, dates, seasons. Public modules should follow
+semantiv versioning
+
+    0.1.0 < 0.1.x < 0.2.0 < 1.0.0-release < 1.0.0
+
+Markdown captured majority of the docs share at Wiki's expense.
+```
 
 ---
 ![Clone/fix fullscreen](https://raw.github.com/bahmutov/talks/master/images/3-projects-fix.png)
@@ -321,6 +340,13 @@ Please be kind to your audience.
     }
 
 The most powerful 30-second argument for using git + nodejs.
+
+```notes
+You DO NOT have to run private registry to use nodejs dependencies.
+Just point package.json at git repos directly and use SHA-1 commit ids,
+or tags instead of versions. All benefits of using versioned dependencies
+without any complexity.
+```
 
 ### Pay forward: request your fixes to be pulled back
 
@@ -342,12 +368,13 @@ different parts are developed at different speeds.
 
 ## Non-problem
 
-In a single repo, because it lack isolation, you might fix 1 bug,
+In a single repo, because it lacks isolation, you might fix 1 bug,
 but it might interact with other parts and introduce 10 new bugs.
 
 ## Simple problem 1
 
-> package.json dependencies get out of sync with `node_modules`
+> package.json dependencies get out of
+> sync with `node_modules`
 
 Use [deps-ok](https://github.com/bahmutov/deps-ok) and
 [grunt-deps-ok](https://github.com/bahmutov/grunt-deps-ok).
