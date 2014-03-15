@@ -48,6 +48,7 @@ refactored and split into smaller units
 - inability to unit test a specific feature
 - two or more programming languages or environments:
 DB + API, DB + API + front-end + worker machines
+- using AND when describing the goals
 
 Not red flags: size of the code base, number of lines,
 number of people, software methodology.
@@ -184,7 +185,7 @@ reached 63k.
 
 ## NPM in action
 
-> I need ANSI colors in my project
+> I need ANSI colors in my terminal
 
 ```
 npm search colors
@@ -195,6 +196,9 @@ npm install chalk --save
 require('chalk');
 console.log( chalk.blue('Hello world!') );
 ```
+
+
+
 
 ## Splitting large project
 
@@ -371,6 +375,9 @@ different parts are developed at different speeds.
 In a single repo, because it lacks isolation, you might fix 1 bug,
 but it might interact with other parts and introduce 10 new bugs.
 
+This is because you are breaking the rule: *when fixing a problem, change 1 part*.
+In single repo, all parts are moving.
+
 ## Simple problem 1
 
 > package.json dependencies get out of
@@ -390,6 +397,12 @@ error message to run `npm install`. Also supports bower dependencies
 ```
 
 ## Hard problem: staying up to date
+
+10 top level dependencies.
+
+* Which ones have new releases?
+* Which ones I can upgrade without breaking my stuff?
+* Can the upgrade process be automated?
 
 ```notes
 Each project is constantly getting out of date.
