@@ -336,6 +336,15 @@ Yes.
 different parts are developed at different speeds.
 ```
 
+## Non-problem
+
+> In a single repo model, I could have just fixed the bug.
+
+## Non-problem
+
+In a single repo, because it lack isolation, you might fix 1 bug,
+but it might interact with other parts and introduce 10 new bugs.
+
 ## Simple problem 1
 
 > package.json dependencies get out of sync with `node_modules`
@@ -353,7 +362,7 @@ first step to your grunt default pipeline and they will get a nice
 error message to run `npm install`. Also supports bower dependencies
 ```
 
-## Hard problem: staying in sync
+## Hard problem: staying up to date
 
 See all outdated modules (recursively)
 
@@ -361,11 +370,14 @@ See all outdated modules (recursively)
 
 ```notes
 Each project is constantly getting out of date.
-The dependencies keep releasing versions, but you have not switched.
+The dependencies keep releasing versions, but you have not yet ugraded.
 This is a good feature: it protects you.
 Try `npm outdated` on any of your projects to see which
 dependencies are out of date.
 ```
+
+---
+![tv update fullscreen](https://raw.github.com/bahmutov/talks/master/images/tv-update.jpg)
 
 ---
 ![npm outdated fullscreen](https://raw.github.com/bahmutov/talks/master/images/npm-outdated.png)
@@ -373,6 +385,9 @@ dependencies are out of date.
 ## 1 level only
 
 You control only top level dependencies.
+
+---
+![top level dependencies fullscreen](https://raw.github.com/bahmutov/talks/master/images/top-level-dependencies.png)
 
 ---
 ![GT depends on fullscreen](https://raw.github.com/bahmutov/talks/master/images/gt-dependencies.png)
@@ -417,6 +432,26 @@ about 40 dependencies total
 
 ---
 ![next update results fullscreen](https://raw.github.com/bahmutov/talks/master/images/next-update-command.png)
+
+## iOS6 vs iOS7 updates
+
+Apple has switched the way updates are installed.
+
+* iOS6 - pull mechanism
+* iOS7 - push mechanism
+
+---
+![iOS7 updates fullscreen](https://raw.github.com/bahmutov/talks/master/images/ios7-updates.png)
+
+## Update question
+
+> Can I update *A* from *1.0.0* to *1.1.0*?
+
+```notes
+Can I update a dependency without breaking my project?
+0.1.0 version change means minor update. Can I believe a person I have never
+met not to break something important to ME?
+```
 
 ## TODO next-update-stats
 
