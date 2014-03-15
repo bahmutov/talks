@@ -243,6 +243,7 @@ javascriptoo has nice demos for every project
 
 * License (look for MIT/BSD)
 * Use [node-license-sniffer](https://github.com/mwilliamson/node-license-sniffer)
+or [licensing](https://github.com/3rd-Eden/licensing)
 * Offline NPM cache (for CI agents for example) see `npm config get cache`
 
 ---
