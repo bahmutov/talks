@@ -391,23 +391,33 @@ error message to run `npm install`. Also supports bower dependencies
 
 ## Hard problem: staying up to date
 
-See all outdated modules (recursively)
-
-`npm outdated` or `npm outdated --parseable|wc -l`
-
 ```notes
 Each project is constantly getting out of date.
 The dependencies keep releasing versions, but you have not yet ugraded.
 This is a good feature: it protects you.
-Try `npm outdated` on any of your projects to see which
-dependencies are out of date.
 ```
 
 ---
 ![tv update fullscreen](https://raw.github.com/bahmutov/talks/master/images/tv-update.jpg)
 
+## See outdated
+
+See all outdated modules (recursively)
+
+`npm outdated` or `npm outdated --parseable|wc -l`
+
+```notes
+Try `npm outdated` on any of your projects to see which
+dependencies are out of date.
+```
+
 ---
 ![npm outdated fullscreen](https://raw.github.com/bahmutov/talks/master/images/npm-outdated.png)
+
+```notes
+Most of these lines are meaningless - we cannot control dependencies deep down the
+chain. We only care about top level dependencies WE specified
+```
 
 ## 1 level only
 
@@ -487,6 +497,8 @@ met not to break something important to ME?
 
 ## TODO next-updater
 
+## TODO close the loop
+
 # More info
 
 * [Heroku: 10 Habits of a Happy Node Hacker](https://blog.heroku.com/archives/2014/3/11/node-habits)
@@ -506,6 +518,11 @@ has a hard limit: it can only keep 4-7 things in your immediate memory at a time
 Splitting things into dependencies allows to remove bunch of things from
 your mind, and allows the concentration on immediate task at hand.
 ```
+
+## Conclusions
+
+Splitting a large project makes *staying up to date* a problem.
+Tools like [next-update](https://github.com/bahmutov/next-update) solve it.
 
 [slides-now-footer]: "@bahmutov"
 [slides-now-theme]: "full"
