@@ -227,6 +227,7 @@ Common examples: logging, async/callback handling
 * http://www.jsdb.io/, http://www.javascriptoo.com/
 * http://microjs.com/
 * http://www.echojs.com/
+* http://trendingjs.com/
 
 ```notes
 jsdb displays average time between commits, number of active committers, CDN urls
@@ -244,6 +245,7 @@ javascriptoo has nice demos for every project
 * License (look for MIT/BSD)
 * Use [node-license-sniffer](https://github.com/mwilliamson/node-license-sniffer)
 or [licensing](https://github.com/3rd-Eden/licensing)
+    * [tldrlegal.com](https://tldrlegal.com/)
 * Offline NPM cache (for CI agents for example) see `npm config get cache`
 
 ---
@@ -257,6 +259,8 @@ The argument is economic: you will not have to maintain
 source control (github), continuous build (Travis), code coverage (coveralls.io),
 browsers (saucelabs). Plus you get actual people trying to use your module, hopefully
 giving you feedback or even code contributions.
+
+tldrlegal.com explains each license in plain english, very well structured website.
 ```
 
 ## Open source increases antifragility
