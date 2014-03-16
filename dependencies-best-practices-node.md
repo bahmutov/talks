@@ -536,31 +536,12 @@ met not to break something important to ME?
 ---
 ![next update results fullscreen](https://raw.github.com/bahmutov/talks/master/images/next-update-command.png)
 
-## iOS6 vs iOS7 updates
-
-Apple has switched the way updates are installed.
-
-* iOS6 - pull mechanism
-* iOS7 - push mechanism
-
----
-![iOS 6 updates fullscreen](https://raw.github.com/bahmutov/talks/master/images/ios6-updates.png)
-
-```notes
-iOS 6 asked you to update either each application or all of them.
-```
-
----
-![iOS 7 updates fullscreen](https://raw.github.com/bahmutov/talks/master/images/ios7-updates.png)
-
-```notes
-iOS 7 has install updates by default mode. You have no assurance that
-your data or settings are not going to be preserved, although you assume this
-```
-
 ## Update question
 
 > Can I update *A* from *1.0.0* to *1.1.0* reliably?
+
+I might not have enough tests, and would like to know
+in general if module A's version 1.1.0 is compatible with version 1.0.0
 
 ## next-update-stats
 
@@ -582,7 +563,38 @@ version pair, for example http://next-update.herokuapp.com/package/lodash/1.0.0/
 ---
 ![http://next-update.herokuapp.com fullscreen](https://raw.github.com/bahmutov/talks/master/images/next-update-stats-website.png)
 
-## TODO next-updater
+## next-updater
+
+> Large number of projects getting out of date is a problem.
+
+---
+![lots of projects need updates fullscreen](https://raw.github.com/bahmutov/talks/master/images/multiple-projects-out-of-date.png)
+
+```notes
+Can I automate next-update for all these projects?
+```
+
+## iOS6 vs iOS7 updates
+
+Apple has switched the way updates are installed.
+
+* iOS6 - pull mechanism
+* iOS7 - push mechanism
+
+---
+![iOS 6 updates fullscreen](https://raw.github.com/bahmutov/talks/master/images/ios6-updates.png)
+
+```notes
+iOS 6 asked you to update either each application or all of them.
+```
+
+---
+![iOS 7 updates fullscreen](https://raw.github.com/bahmutov/talks/master/images/ios7-updates.png)
+
+```notes
+iOS 7 has install updates by default mode. You have no assurance that
+your data or settings are not going to be preserved, although you assume this
+```
 
 ## TODO close the loop
 
