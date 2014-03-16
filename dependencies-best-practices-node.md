@@ -491,22 +491,46 @@ Apple has switched the way updates are installed.
 * iOS7 - push mechanism
 
 ---
-![iOS7 updates fullscreen](https://raw.github.com/bahmutov/talks/master/images/ios7-updates.png)
+![iOS 6 updates fullscreen](https://raw.github.com/bahmutov/talks/master/images/ios6-updates.png)
+
+```notes
+iOS 6 asked you to update either each application or all of them.
+```
+
+---
+![iOS 7 updates fullscreen](https://raw.github.com/bahmutov/talks/master/images/ios7-updates.png)
+
+```notes
+iOS 7 has install updates by default mode. You have no assurance that
+your data or settings are not going to be preserved, although you assume this
+```
 
 ## Update question
 
 > Can I update *A* from *1.0.0* to *1.1.0*?
 
 ```notes
-Can I update a dependency without breaking my project?
+If I structure my application the way I suggest: a graph of dependencies,
+can I update a dependency without breaking my project?
 0.1.0 version change means minor update. Can I believe a person I have never
 met not to break something important to ME?
 ```
 
-## TODO next-update-stats
+## next-update-stats
 
 ---
 ![next-update stats fullscreen](https://raw.github.com/bahmutov/talks/master/images/next-update-stats-cli.png)
+
+```notes
+next-update-stats server collects anonymous update success / fail stats for public modules.
+Each time next-update tests A 1.0.0 -> 1.1.0 update it sends true / false to the server running
+at http://next-update.herokuapp.com/
+You can get JSON by using http://next-update.herokuapp.com/package/name or data for specific
+version pair, for example http://next-update.herokuapp.com/package/lodash/1.0.0/2.4.0
+```
+
+---
+![http://next-update.herokuapp.com fullscreen](https://raw.github.com/bahmutov/talks/master/images/next-update-stats-website.png)
 
 ## TODO next-updater
 
