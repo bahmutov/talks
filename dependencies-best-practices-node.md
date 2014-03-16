@@ -99,16 +99,6 @@ the mental capacity of any team. Thus the project calcifies, and new things
 are harder to add without breaking the existing functionality.
 ```
 
----
-![Application assembly fullscreen](https://raw.github.com/bahmutov/talks/master/images/3-projects.png)
-
-```notes
-Physically splitting the project into manageable chunks
-cuts the number of ways different parts can interact.
-Try very hard to have a graph without loops (single root tree, with root being
-the ultimate application)
-```
-
 ## Physical separation
 
 * functions separate variables via scope
@@ -120,18 +110,29 @@ We use physical separation all the time: a function is
 language enforced scope separation for example.
 ```
 
+---
+![Application assembly fullscreen](https://raw.github.com/bahmutov/talks/master/images/3-projects.png)
+
+```notes
+Physically splitting the project into manageable chunks
+cuts the number of ways different parts can interact.
+Try very hard to have a graph without loops (single root tree, with root being
+the ultimate application)
+```
+
 ## Clear boundary
 
 ```js
 // function signature
-function add(a, b) ...
+function add(a, b) { body ... }
 
 // package.json
 {
     "name": "my-utils",
     "main": "index.js"
     "dependencies": {
-        "another-module": "0.1.0"
+        "module-a": "1.0.0",
+        "module-b": "0.1.0"
     }
 }
 ```
@@ -214,7 +215,7 @@ npm init
 // answer questions
 ```
 
-Set `"private": true`
+(optional) set `"private": true`
 
 * Use [grunt-nice-package](https://github.com/bahmutov/grunt-nice-package)
 
@@ -269,6 +270,12 @@ giving you feedback or even code contributions.
 tldrlegal.com explains each license in plain english, very well structured website.
 ```
 
+## Open sourcing benefits
+
+* Higher quality (next slide)
+* Economic: use free public infrastructure
+* Human: happier employees, more visibility
+
 ## Open source increases antifragility
 
 **Fragile** = breaks quickly under stress: porcelain mug, glass statues, modern financial sector.
@@ -296,11 +303,13 @@ making them likely to deteriorate in quality over time.
 
 ```notes
 You have only a few seconds to grab attention.
-Please provide good short package description: multiple drafts are ok!
-Use badges to show if module is tested and up to date.
-Provide examples!
+Please provide a good short package description: multiple drafts are ok!
 
-This is extremely important for internal modules: you do not know who
+Use badges to show if module is tested and up to date.
+
+Describe a typical problem and give an example.
+
+Same principles applu to internal modules: you do not know who
 is going to use your module and what their level of expertise is.
 They could be a super expert or could be a novice. Give them enough information
 to decide if what you are offering fits their needs. They will do same to you.
@@ -376,7 +385,33 @@ In a single repo, because it lacks isolation, you might fix 1 bug,
 but it might interact with other parts and introduce 10 new bugs.
 
 This is because you are breaking the rule: *when fixing a problem, change 1 part*.
-In single repo, all parts are moving.
+
+In a single repo, all parts are moving and interacting.
+
+```notes
+Solving 1 or 2 interacting parts is easy.
+Solving 3-body in space problem is still a very interesting
+physics question http://en.wikipedia.org/wiki/Three-body_problem
+```
+
+## Actual problems
+
+```
+// package.json
+{
+    "dependencies": {
+        "module-a": "1.0.0"
+    }
+}
+// node_modules/module-a/package.json
+{
+    "version": "0.8.0"
+}
+// npm registry:
+module-a: 0.8.0, 0.9.0, 1.0.0, 2.0.0
+```
+
+
 
 ## Simple problem 1
 
@@ -457,6 +492,7 @@ Great tool to see your dependencies, including badges https://david-dm.org/
 ```notes
 slides-now depends on 302 modules
 gt depends on 187 modules
+next-update depends on 176 modules
 coffee-script only depends on 2 immediate dependencies (mkdirp and docco), but this is not entirely true
 ```
 
@@ -478,7 +514,24 @@ https://david-dm.org/jashkenas/coffee-script#info=devDependencies&view=tree
 about 40 dependencies total
 ```
 
-## TODO next-update
+## next-update
+
+> Can I update *A* from *1.0.0* to *1.1.0*?
+
+[next-update](https://github.com/bahmutov/next-update)
+
+* Fetch available versions
+* Install each version, run tests
+* Report successful updates
+
+**YOUR PROJECT MUST HAVE TESTS**
+
+```notes
+If I structure my application the way I suggest: a graph of dependencies,
+can I update a dependency without breaking my project?
+0.1.0 version change means minor update. Can I believe a person I have never
+met not to break something important to ME?
+```
 
 ---
 ![next update results fullscreen](https://raw.github.com/bahmutov/talks/master/images/next-update-command.png)
@@ -507,16 +560,13 @@ your data or settings are not going to be preserved, although you assume this
 
 ## Update question
 
-> Can I update *A* from *1.0.0* to *1.1.0*?
-
-```notes
-If I structure my application the way I suggest: a graph of dependencies,
-can I update a dependency without breaking my project?
-0.1.0 version change means minor update. Can I believe a person I have never
-met not to break something important to ME?
-```
+> Can I update *A* from *1.0.0* to *1.1.0* reliably?
 
 ## next-update-stats
+
+[next-update-stats](https://github.com/bahmutov/next-update-stats) is a free
+[public server](http://next-update.herokuapp.com)
+collecting success / fail anonymous stats sent by next-update
 
 ---
 ![next-update stats fullscreen](https://raw.github.com/bahmutov/talks/master/images/next-update-stats-cli.png)
