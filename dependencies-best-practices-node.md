@@ -82,11 +82,11 @@ Hard to develop software suffers from an interaction problem.
 Each item can interact with every other item in the
 project.
 
-![Software communication complexity](https://raw.github.com/bahmutov/talks/master/images/3-players.png)
-
 ```js
 var sum = a + b;
 ```
+
+![Software communication complexity](https://raw.github.com/bahmutov/talks/master/images/3-players.png)
 
 ```notes
 In a source file with 3 lines/variables/files 3 things interact.
@@ -187,6 +187,19 @@ Comes with nodejs install, generally works.
 Most problems recently due the public registry reliability.
 The number of listed and stored (as tar zip archives) packages
 reached 63k.
+```
+
+## npm vs bower
+
+NPM public registry keeps copies of entire package.
+Bower registry only keeps urls to git repos + the author
+selects which files to include.
+
+You can still exclude certain files using .npmignore file.
+
+```notes
+NPM tar archives include all the code, while bower is mostly
+used to distribute final front end libraries.
 ```
 
 ## NPM in action
@@ -588,6 +601,9 @@ status for most of my projects in single dashboard
 Can I automate next-update for all these projects?
 ```
 
+---
+![Updates come in waves fullscreen](https://raw.github.com/bahmutov/talks/master/images/coffee-script-dependency-waves.png)
+
 ## iOS6 vs iOS7 updates
 
 Apple has switched the way updates are installed.
@@ -623,6 +639,7 @@ your data or settings are not going to be preserved, although you assume this
 
 ## Additional reading
 
+* [npm-developers](https://www.npmjs.org/doc/misc/npm-developers.html)
 * [Heroku: 10 Habits of a Happy Node Hacker](https://blog.heroku.com/archives/2014/3/11/node-habits)
 * [Publishing a simple package to npm](http://evanhahn.com/make-an-npm-baby/)
 * What has changed in new version?
@@ -649,9 +666,16 @@ your mind, and allows the concentration on immediate task at hand.
 
 Splitting a large project makes *staying up to date* a problem.
 
-Tools like [next-update](https://github.com/bahmutov/next-update),
-[next-update-stats](https://github.com/bahmutov/next-update-stats),
-[next-updater](https://github.com/bahmutov/next-updater) solve it.
+[next-update](https://github.com/bahmutov/next-update) - **done**
+
+[next-update-stats](https://github.com/bahmutov/next-update-stats) - **done**
+
+[next-updater](https://github.com/bahmutov/next-updater) - *in progress*
+
+update ping - *to be started*
+
+
+Any help will be appreciated, contact via gleb.bahmutov@gmail.com or @bahmutov
 
 [slides-now-footer]: "@bahmutov"
 [slides-now-theme]: "full"
