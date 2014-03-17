@@ -62,6 +62,7 @@ number of people, software methodology.
 * Reuse our code somewhere else
 
 In general, [large projects are never finished](http://bahmutov.calepin.co/large-projects-are-never-finished.html)
+and [monolithic Node does not work well](http://www.richardrodger.com/monolithic-nodejs)
 
 ```notes
 - I have been to teams where setting up tools took days.
@@ -674,8 +675,7 @@ Splitting a large project makes *staying up to date* a problem.
 
 update ping - *to be started*
 
-
-Any help will be appreciated, contact via gleb.bahmutov@gmail.com or @bahmutov
+Any help will be appreciated, contact gleb.bahmutov@gmail.com or @bahmutov
 
 [slides-now-footer]: "@bahmutov"
 [slides-now-theme]: "full"
