@@ -571,6 +571,8 @@ version pair, for example http://next-update.herokuapp.com/package/lodash/1.0.0/
 ![lots of projects need updates fullscreen](https://raw.github.com/bahmutov/talks/master/images/multiple-projects-out-of-date.png)
 
 ```notes
+Example: http://glebbahmutov.com/status/ shows the
+status for most of my projects in single dashboard
 Can I automate next-update for all these projects?
 ```
 
@@ -596,11 +598,21 @@ iOS 7 has install updates by default mode. You have no assurance that
 your data or settings are not going to be preserved, although you assume this
 ```
 
+## next-updater
+
+* Clone your git repos one by one
+* If builds ok:
+* Runs next-update
+* If successful AND strong positive next-update-stats
+    * update dependency to latest
+    * push update to origin
+
 ## TODO close the loop
 
-# More info
+## Additional reading
 
 * [Heroku: 10 Habits of a Happy Node Hacker](https://blog.heroku.com/archives/2014/3/11/node-habits)
+* [Publishing a simple package to npm](http://evanhahn.com/make-an-npm-baby/)
 
 ## Conclusions
 
@@ -618,7 +630,7 @@ Splitting things into dependencies allows to remove bunch of things from
 your mind, and allows the concentration on immediate task at hand.
 ```
 
-## Conclusions
+## Final thought
 
 Splitting a large project makes *staying up to date* a problem.
 Tools like [next-update](https://github.com/bahmutov/next-update) solve it.
