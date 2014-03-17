@@ -28,7 +28,8 @@ a very nice dependency mechanism is actually working in practice.
 
 Dr. Gleb Bahmutov, PhD
 
-[Kensho](http://www.kensho.com/), ex- lots of companies
+[Kensho](http://www.kensho.com/), ex- lots of companies.
+**HIRING**
 
 Win32 -> C/C++/Java/C#/CoffeeScript/JavaScript -> Node/Browser
 
@@ -82,6 +83,10 @@ Each item can interact with every other item in the
 project.
 
 ![Software communication complexity](https://raw.github.com/bahmutov/talks/master/images/3-players.png)
+
+```js
+var sum = a + b;
+```
 
 ```notes
 In a source file with 3 lines/variables/files 3 things interact.
@@ -535,6 +540,12 @@ met not to break something important to ME?
 
 ---
 ![next update results fullscreen](https://raw.github.com/bahmutov/talks/master/images/next-update-command.png)
+
+## next-update options
+
+* Install latest version separately (default)
+* Install latest versions for all modules at once
+* Install and test each version of each module
 
 ## Update question
 
