@@ -223,6 +223,7 @@ npm init
 (optional) set `"private": true`
 
 * Use [grunt-nice-package](https://github.com/bahmutov/grunt-nice-package)
+* Look at [yeoman](http://yeoman.io/), [ninit](http://akoenig.github.io/ninit/)
 
 ---
 ![if (wheel) return 'invented' fullscreen](https://raw.github.com/bahmutov/talks/master/images/3-projects-use-3rd-party.png)
