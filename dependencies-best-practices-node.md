@@ -613,6 +613,9 @@ your data or settings are not going to be preserved, although you assume this
 
 * [Heroku: 10 Habits of a Happy Node Hacker](https://blog.heroku.com/archives/2014/3/11/node-habits)
 * [Publishing a simple package to npm](http://evanhahn.com/make-an-npm-baby/)
+* What has changed in new version?
+    * [changed CLI tool](https://github.com/bahmutov/changed)
+    * [david-dm shows changelog](https://raw.github.com/bahmutov/talks/master/images/david-dm-changelog.png)
 
 ## Conclusions
 
@@ -633,7 +636,10 @@ your mind, and allows the concentration on immediate task at hand.
 ## Final thought
 
 Splitting a large project makes *staying up to date* a problem.
-Tools like [next-update](https://github.com/bahmutov/next-update) solve it.
+
+Tools like [next-update](https://github.com/bahmutov/next-update),
+[next-update-stats](https://github.com/bahmutov/next-update-stats),
+[next-updater](https://github.com/bahmutov/next-updater) solve it.
 
 [slides-now-footer]: "@bahmutov"
 [slides-now-theme]: "full"
