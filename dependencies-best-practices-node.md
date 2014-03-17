@@ -38,6 +38,15 @@ Win32 -> C/C++/Java/C#/CoffeeScript/JavaScript -> Node/Browser
 
 ~ [60 modules](https://www.npmjs.org/~bahmutov) on NPM registry, 9 plugins for Grunt
 
+## Presentation overview
+
+* Problem, red flags
+* Minimize complexity by separation
+* Nodejs and npm
+* Splitting large projects
+* Keeping dependencies up to date using
+custom tools
+
 ---
 ![large red flags fullscreen](https://raw.github.com/bahmutov/talks/master/images/red-flags.jpg)
 
@@ -71,15 +80,10 @@ jQuery checkout and build takes 60 - 90 seconds!
 - We have 10k of lines of code, lets get better return on investment by reusing them.
 ```
 
-## Problem
-
-* Large project
-* Slow feature development
-* Lots of trip wires
-
 ## Software complexity
 
-Hard to develop software suffers from an interaction problem.
+All software code suffers from **interaction complexity**
+
 Each item can interact with every other item in the
 project.
 
@@ -105,7 +109,7 @@ the mental capacity of any team. Thus the project calcifies, and new things
 are harder to add without breaking the existing functionality.
 ```
 
-## Physical separation
+## Solution: physical separation
 
 * functions separate variables via scope
 * source files separate code
@@ -310,7 +314,7 @@ tldrlegal.com explains each license in plain english, very well structured websi
 ## Open sourcing benefits
 
 * Higher quality (next slide)
-* Economic: use free public infrastructure
+* Economic: use free infrastructure
 * Human: happier employees, more visibility
 
 ## Open source increases antifragility
@@ -421,7 +425,7 @@ different parts are developed at different speeds.
 In a single repo, because it lacks isolation, you might fix 1 bug,
 but it might interact with other parts and introduce 10 new bugs.
 
-This is because you are breaking the rule: *when fixing a problem, change 1 part*.
+This is because you are breaking the rule: *when fixing a problem, change a single part*.
 
 In a single repo, all parts are moving and interacting.
 
@@ -670,6 +674,7 @@ Splitting a large project into smaller ones and assembling them
 makes it **easier** to do **small** things:
 
 * understanding
+* coding
 * testing
 * reusing
 
