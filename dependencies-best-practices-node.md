@@ -190,6 +190,23 @@ The number of listed and stored (as tar zip archives) packages
 reached 63k.
 ```
 
+## Transitive
+
+You can use different versions of same module
+
+```
+// dependencies-resolution uses module-a@2.0.0, module-b@0.6.0
+// module-b@0.6.0 uses module-a@1.0.0
+
+$ npm list
+dependencies-resolution@0.0.0
+├── module-a@2.0.0
+└─┬ module-b@0.6.0
+  └── module-a@1.0.0
+```
+
+
+
 ## npm vs bower
 
 NPM public registry keeps copies of entire package.
