@@ -179,7 +179,7 @@ var a = require('./node_modules/another-module/src/something.js');
 
 [The 12 factor app](http://12factor.net/)
 
-## Nodejs
+## Why Nodejs?
 
 Makes it very easy to split a project into *individual modules*.
 The dependency mechanism is managed by *Node Package Manager.*
@@ -218,6 +218,8 @@ Bower registry only keeps urls to git repos + the author
 selects which files to include.
 
 You can still exclude certain files using .npmignore file.
+
+npm registry suffers from outages.
 
 ```notes
 NPM tar archives include all the code, while bower is mostly
@@ -284,9 +286,9 @@ javascriptoo has nice demos for every project
 
 ## New and updates 3rd party modules
 
-* http://www.echojs.com/
-* http://dailyjs.com/
+* http://www.echojs.com/, http://dailyjs.com/
 * [newsletters](http://bahmutov.calepin.co/javascript-and-angularjs-learning-resources.html)
+* Look at what other packages use.
 
 ## Enterprise considerations
 
@@ -398,11 +400,11 @@ The most powerful 30-second argument for using git + nodejs.
 ```notes
 You DO NOT have to run private registry to use nodejs dependencies.
 Just point package.json at git repos directly and use SHA-1 commit ids,
-or tags instead of versions. All benefits of using versioned dependencies
-without any complexity.
-```
+or tags instead of versions. NPM can use anything that resolved to
+a folder with package.json file as a target!
 
-### Pay forward: request your fixes to be pulled back
+All the benefits of using versioned dependencies without any complexity.
+```
 
 ## Dependency management
 
@@ -477,6 +479,7 @@ error message to run `npm install`. Also supports bower dependencies
 10 top level dependencies.
 
 * Which ones have new releases?
+    * Each project can iterate very fast
 * Which ones I can upgrade without breaking my stuff?
 * Can the upgrade process be automated?
 
@@ -487,7 +490,7 @@ This is a good feature: it protects you.
 ```
 
 ---
-![tv update fullscreen](https://raw.github.com/bahmutov/talks/master/images/tv-update.jpg)
+![everything needs to be updated, even TVs fullscreen](https://raw.github.com/bahmutov/talks/master/images/tv-update.jpg)
 
 ## See outdated
 
@@ -657,7 +660,18 @@ your data or settings are not going to be preserved, although you assume this
     * update dependency to latest
     * push update to origin
 
-## TODO close the loop
+## closing the loop
+
+[next-update-failed](https://github.com/bahmutov/next-update-failed) - include
+in your project as dev dependency. Whenever someone uses *next-update* and it
+fails for your package, you will get detailed information.
+
+```notes
+The work only has started, but this seems like a good idea for enterprise customers.
+```
+
+---
+![next-update-failed fullscreen](https://raw.github.com/bahmutov/talks/master/images/next-update-failed-principle.png)
 
 ## Additional reading
 
@@ -695,7 +709,7 @@ Splitting a large project makes *staying up to date* a problem.
 
 [next-updater](https://github.com/bahmutov/next-updater) - *in progress*
 
-update ping - *to be started*
+[next-update-failed](https://github.com/bahmutov/next-update-failed) - *to be started*
 
 Any help will be appreciated, contact gleb.bahmutov@gmail.com or @bahmutov
 
