@@ -421,7 +421,7 @@ Yes.
 - the mess is manageable.
 - the mess maps nicely to the software development:
 different parts are developed at different speeds.
-- the dependencies isolate the true mess: constant merging of commits
+- using versioned dependencies isolates the true mess: constant merging of commits
 ```
 
 ## Non-problem 1
@@ -503,10 +503,16 @@ error message to run `npm install`. Also supports bower dependencies
 * Which ones I can upgrade without breaking my stuff?
 * Can the upgrade process be automated?
 
+**Relevant** Slashdot
+["A Call For Rollbacks To Previous Versions of Software"](http://tech.slashdot.org/story/14/03/18/151216/a-call-for-rollbacks-to-previous-versions-of-software)
+
 ```notes
 Each project is constantly getting out of date.
 The dependencies keep releasing versions, but you have not yet ugraded.
 This is a good feature: it protects you.
+
+Rule of thumb: using 1 release behind the latest to great benefits, but
+let bugs in the latest release be ironed out.
 ```
 
 ---
