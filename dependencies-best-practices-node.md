@@ -357,7 +357,7 @@ Use badges to show if module is tested and up to date.
 
 Describe a typical problem and give an example.
 
-Same principles applu to internal modules: you do not know who
+Same principles apply to internal modules: you do not know who
 is going to use your module and what their level of expertise is.
 They could be a super expert or could be a novice. Give them enough information
 to decide if what you are offering fits their needs. They will do same to you.
@@ -421,13 +421,14 @@ Yes.
 - the mess is manageable.
 - the mess maps nicely to the software development:
 different parts are developed at different speeds.
+- the dependencies isolate the true mess: constant merging of commits
 ```
 
-## Non-problem
+## Non-problem 1
 
 > In a single repo model, I could have just fixed the bug.
 
-## Non-problem
+## Non-problem 1
 
 In a single repo, because it lacks isolation, you might fix 1 bug,
 but it might interact with other parts and introduce 10 new bugs.
@@ -441,6 +442,12 @@ Solving 1 or 2 interacting parts is easy.
 Solving 3-body in space problem is still a very interesting
 physics question http://en.wikipedia.org/wiki/Three-body_problem
 ```
+
+## Non-problem 2
+
+> I could branch single repo and fix one bug
+
+You can easily clone and branch individual dependencies too.
 
 ## Actual problems
 
@@ -459,7 +466,15 @@ physics question http://en.wikipedia.org/wiki/Three-body_problem
 module-a: 0.8.0, 0.9.0, 1.0.0, 2.0.0
 ```
 
+```notes
+There are two problems in the above situation: a small and a large one.
 
+Small problem: declared version of module-a in package.json
+differs from installed version in node_modules/
+
+Large problem: module-a version is behind, there are multiple new
+releases available
+```
 
 ## Simple problem 1
 
