@@ -511,27 +511,22 @@ Most of these lines are meaningless - we cannot control dependencies deep down t
 chain. We only care about top level dependencies WE specified
 ```
 
-## 1 level only
-
-You control only top level dependencies.
-
 ---
-![top level dependencies fullscreen](https://raw.github.com/bahmutov/talks/master/images/top-level-dependencies.png)
-
----
-![GT depends on fullscreen](https://raw.github.com/bahmutov/talks/master/images/gt-dependencies.png)
+![https://david-dm.org/ fullscreen](https://raw.github.com/bahmutov/talks/master/images/gt-dependencies.png)
 
 ```notes
-Great tool to see your dependencies, including badges https://david-dm.org/
+Great tool to see your dependencies, including badges https://david-dm.org/.
+You can drill down into dependencies.
 ```
 
-## It really depends
+## Dependencies
 
 `npm ls` - shows the dependency tree
 
 `npm ls --parseable` - shows the dependency paths
 
-`npm ls --parseable|sed 's/.*\/\(.*\)/\1/g'|sort|uniq|wc -l` - counts number of unique dependency modules
+`npm ls --parseable|sed
+    's/.*\/\(.*\)/\1/g'|sort|uniq|wc -l` - counts number of unique dependency modules
 
 ```notes
 slides-now depends on 302 modules
@@ -558,15 +553,23 @@ https://david-dm.org/jashkenas/coffee-script#info=devDependencies&view=tree
 about 40 dependencies total
 ```
 
+## You control 1 level
+
+Rule: you control only the top level dependencies.
+
+---
+![top level dependencies fullscreen](https://raw.github.com/bahmutov/talks/master/images/top-level-dependencies.png)
+
+
 ## next-update
 
-> Can I update *A* from *1.0.0* to *1.1.0*?
+> Can I update dependency *A* from *1.0.0* to *1.1.0*?
 
 [next-update](https://github.com/bahmutov/next-update)
 
-* Fetch available versions
-* Install each version, run tests
-* Report successful updates
+* Fetches available versions
+* Installs each version, run tests
+* Reports successful updates
 
 **YOUR PROJECT MUST HAVE TESTS**
 
@@ -588,10 +591,16 @@ met not to break something important to ME?
 
 ## Update question
 
-> Can I update *A* from *1.0.0* to *1.1.0* reliably?
+> Am I likely to successfully update *A* from *1.0.0* to *1.1.0*?
 
 I might not have enough tests, and would like to know
 in general if module A's version 1.1.0 is compatible with version 1.0.0
+
+```notes
+In general, I do not trust the convention that patch version changes
+do not break things. I also might be using a small subset of the features
+and upgrade across major versions just fine
+```
 
 ## next-update-stats
 
@@ -651,7 +660,7 @@ iOS 7 has install updates by default mode. You have no assurance that
 your data or settings are not going to be preserved, although you assume this
 ```
 
-## next-updater
+## [next-updater](https://github.com/bahmutov/next-updater)
 
 * Clone your git repos one by one
 * If builds ok:
@@ -668,6 +677,10 @@ fails for your package, you will get detailed information.
 
 ```notes
 The work only has started, but this seems like a good idea for enterprise customers.
+I was inspired by lots of interesting errors reported by the actual customers when we
+started using Sentry http://bahmutov.calepin.co/know-unknown-unknowns-with-sentry.html
+I could have never guessed the variety of errors people experience, and our automated
+and manual testing lets through.
 ```
 
 ---
@@ -685,12 +698,11 @@ The work only has started, but this seems like a good idea for enterprise custom
 ## Conclusions
 
 Splitting a large project into smaller ones and assembling them
-makes it **easier** to do **small** things:
+makes it **simpler** to:
 
-* understanding
-* coding
-* testing
-* reusing
+* understand, code and test
+* complete things
+* be happy
 
 ```notes
 You are admitting that you are a human being: your mental capacity
