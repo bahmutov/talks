@@ -113,6 +113,7 @@ are harder to add without breaking the existing functionality.
 
 * functions separate variables via scope
 * source files separate code
+* teams separate people
 * dependencies separate files
 
 ```notes
@@ -168,7 +169,8 @@ if (module.parent) {
 ### avoid
 
 ```js
-var a = require('./node_modules/another-module/src/something.js');
+var a = require(
+    './node_modules/another-module/src/something.js');
 ```
 
 ## App assembly principles
@@ -181,7 +183,7 @@ var a = require('./node_modules/another-module/src/something.js');
 
 ## Why Nodejs?
 
-Makes it very easy to split a project into *individual modules*.
+Makes it very easy to split a project into *individual packages*.
 The dependency mechanism is managed by *Node Package Manager.*
 
 * It is an ordinary package itself [npm](https://www.npmjs.org/package/npm)
@@ -235,6 +237,7 @@ npm search colors
 npm info chalk
 npm home chalk
 npm install chalk --save
+
 // index.js
 require('chalk');
 console.log( chalk.blue('Hello world!') );
@@ -511,14 +514,6 @@ Most of these lines are meaningless - we cannot control dependencies deep down t
 chain. We only care about top level dependencies WE specified
 ```
 
----
-![https://david-dm.org/ fullscreen](https://raw.github.com/bahmutov/talks/master/images/gt-dependencies.png)
-
-```notes
-Great tool to see your dependencies, including badges https://david-dm.org/.
-You can drill down into dependencies.
-```
-
 ## Dependencies
 
 `npm ls` - shows the dependency tree
@@ -532,7 +527,18 @@ You can drill down into dependencies.
 slides-now depends on 302 modules
 gt depends on 187 modules
 next-update depends on 176 modules
-coffee-script only depends on 2 immediate dependencies (mkdirp and docco), but this is not entirely true
+coffee-script only depends on 2 immediate dependencies (mkdirp and docco), but this is not entirely true.
+
+This a true testament to the Nodejs power - a lot of people who have never
+met and do not communicate regularly built lots of projects by each contributing a small part.
+```
+
+---
+![https://david-dm.org/ fullscreen](https://raw.github.com/bahmutov/talks/master/images/gt-dependencies.png)
+
+```notes
+Great tool to see your dependencies, including badges https://david-dm.org/.
+You can drill down into dependencies.
 ```
 
 ---
@@ -723,7 +729,10 @@ Splitting a large project makes *staying up to date* a problem.
 
 [next-update-failed](https://github.com/bahmutov/next-update-failed) - *to be started*
 
-Any help will be appreciated, contact gleb.bahmutov@gmail.com or @bahmutov
+Any help will be appreciated.
 
-[slides-now-footer]: "@bahmutov"
+**Thank you**
+
+[slides-now-footer]: "deps like a boss - @bahmutov"
 [slides-now-theme]: "full"
+[slides-now-timer]: "60"
