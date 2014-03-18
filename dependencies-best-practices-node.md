@@ -68,7 +68,7 @@ number of people, software methodology.
 
 * From clean to running > 10 minutes
 * Insignificance
-* Reuse our code somewhere else
+* Cannot reuse code somewhere else
 
 In general, [large projects are never finished](http://bahmutov.calepin.co/large-projects-are-never-finished.html)
 and [monolithic Node does not work well](http://www.richardrodger.com/monolithic-nodejs)
@@ -299,7 +299,9 @@ javascriptoo has nice demos for every project
 * Use [node-license-sniffer](https://github.com/mwilliamson/node-license-sniffer)
 or [licensing](https://github.com/3rd-Eden/licensing)
     * [tldrlegal.com](https://tldrlegal.com/)
-* Offline NPM cache (for CI agents for example) see `npm config get cache`
+* Offline NPM cache (for CI agents for example) `npm config get cache`
+* Run private [registry](https://www.npmjs.org/doc/misc/npm-registry.html)
+or [proxy](https://github.com/paypal/kappa)
 
 ---
 ![save time and money fullscreen](https://raw.github.com/bahmutov/talks/master/images/3-projects-open-source.png)
@@ -729,10 +731,10 @@ Splitting a large project makes *staying up to date* a problem.
 
 [next-update-failed](https://github.com/bahmutov/next-update-failed) - *to be started*
 
-Any help will be appreciated.
+Any help will be appreciated, [@bahmutov](https://twitter.com/bahmutov)
 
 **Thank you**
 
-[slides-now-footer]: "deps like a boss - @bahmutov"
+[slides-now-footer]: "deps like a boss"
 [slides-now-theme]: "full"
 [slides-now-timer]: "60"
