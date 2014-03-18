@@ -449,6 +449,18 @@ physics question http://en.wikipedia.org/wiki/Three-body_problem
 
 You can easily clone and branch individual dependencies too.
 
+## Physical -> process separation
+
+* coding
+* refactoring
+* integration
+
+```notes
+A general programming advice is to separate coding (writing new features, testing)
+from refactoring. Having separate physical links among modules makes possible
+to separate 3rd step: integration or version update.
+```
+
 ## Actual problems
 
 ```
