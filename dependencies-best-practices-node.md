@@ -596,7 +596,9 @@ about 40 dependencies total
 
 ## You control 1 level
 
-Rule: you control only the top level dependencies.
+Rule 1: you control only the top level dependencies.
+
+Rule 2: delaying the upgrade makes it harder
 
 ---
 ![top level dependencies fullscreen](https://raw.github.com/bahmutov/talks/master/images/top-level-dependencies.png)
