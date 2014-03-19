@@ -287,7 +287,7 @@ jsdb displays average time between commits, number of active committers, CDN url
 javascriptoo has nice demos for every project
 ```
 
-## New and updates 3rd party modules
+## News and updates
 
 * http://www.echojs.com/, http://dailyjs.com/
 * [newsletters](http://bahmutov.calepin.co/javascript-and-angularjs-learning-resources.html)
