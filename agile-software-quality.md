@@ -51,6 +51,11 @@ problem. Even when desired, it will take take, since there are
 other customers and legacy support worries.
 ```
 
+## 2 goals
+
+1. Deliver software *quickly*
+2. Deliver software that *works*
+
 ## Quick feature delivery
 
 - MathWorks: at least 6 months
@@ -68,15 +73,42 @@ the features we have delivered at Kensho are part of our broad vision
 and customer requests that fit this vision.
 ```
 
+## How fast is fast?
+
+> If you discover a bug and report it, how fast should it be fixed
+to wow you?
+
+1. 1 year
+2. 1 month
+3. 1 week
+4. 1 day
+5. 1 hour
+
 ## Quality /= Testing
 
 First observation: *as a small company you cannot test your way to quality*
 
-```notes
 You do not have enough human and TIME resources to do enough testing.
+
+```notes
 MathWorks or Amazon can dedicate weeks and months to testing after
 freezing the feature work. You often need to release quickly.
+Even automated tests are too slow - because you must spend time
+writing and maintaining them.
 ```
+
+## No testing?
+
+> What do we do instead?
+
+```notes
+Let me try describe a solution we have been using very successfully at Kensho
+to avoid some of the more time-consuming testing (integration, manual user interface testing).
+```
+
+## Axiom 1
+
+> Every software system has bugs.
 
 ## Simplicity rules
 
@@ -89,6 +121,23 @@ review. Keeping code simpler is more important to us than even
 writing fast software, or even covering every possible edge case.
 ```
 
+## When learning backfires
+
+If your developers cannot use products they learn about, the developers
+will get frustrated, restless, then become angry, and will probably leave.
+
+You cannot keep the best developers if they are not allowed to stay on
+the edge of the development tools.
+
+```notes
+I have never met any developer who preferred to use older version of any
+software. I love progress for progress' sake, and always look forward new
+techniques or software versions. There is no antique software charm.
+
+Leaving on the bleeding edge is dangerous. Most developers want to be
+close without falling over. 1 minor version behind the latest stable
+version is a good place to keep everyone happy.
+```
 
 [slides-now-title]: "Agile quality by @bahmutov"
 [slides-now-theme]: "full"
