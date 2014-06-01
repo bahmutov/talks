@@ -40,6 +40,15 @@ software. The process we employ is very different from the
 process at MathWorks or even at my other startups.
 ```
 
+## Kensho
+
+Small (15 people) startup [trying to change](http://goo.gl/exPHEX) the world of financial analysis.
+
+* front end: angularjs, D3, Django
+* gruntjs for building the front-end
+* back end: Python
+* puppet / chef / docker deployment
+
 ## Starting fresh: the biggest advantage
 
 > As a small starting company you can deliver a feature solving the
@@ -51,6 +60,13 @@ problem. Even when desired, it will take take, since there are
 other customers and legacy support worries.
 ```
 
+## Moving target
+
+We are always delivering a prototype-quality software to
+find IF it solves customer's need.
+
+Then we tighten the screws and make it maintainable in the long run.
+
 ## 2 goals
 
 1. Deliver software *quickly*
@@ -58,7 +74,7 @@ other customers and legacy support worries.
 
 ## Quick feature delivery
 
-- MathWorks: at least 6 months
+- MathWorks: at least 6 months / 3-6 weeks.
 - EveryScape/uTest: at least 1 month
 - Kensho: at least 1 hour for small bug fixes / features,
 days for larger features.
@@ -97,6 +113,15 @@ Even automated tests are too slow - because you must spend time
 writing and maintaining them.
 ```
 
+## Axiom 1
+
+> Every software system has bugs.
+
+```notes
+your operating system has bugs, your printer driver has bugs, your favorite website
+has bugs. The sooner you accept this fact the better.
+```
+
 ## No testing?
 
 > What do we do instead?
@@ -106,20 +131,64 @@ Let me try describe a solution we have been using very successfully at Kensho
 to avoid some of the more time-consuming testing (integration, manual user interface testing).
 ```
 
-## Axiom 1
+## 2 part solution
 
-> Every software system has bugs.
+* bug prevention
+* extremely quick fixes
 
-## Simplicity rules
+```notes
+The best way to reduce need for testing is to prevent bugs from sneaking in.
+But if the discovered bug is fixed very quickly - the users forgive.
+```
+
+## Bug prevention: code reviews
+
+We are very happy with [Phabricator](http://phabricator.org/)
+open source review system.
+
+* very convenient, fast, flexible local branching for reviews.
+
+```notes
+provides good interface for updating branch after feedback,
+squashes each branch into single commit for merging
+```
+
+## Bug prevention: simplicity
 
 > What matters for simplicity is that there's no interleaving
 >                          Rich Hickley, the author of Closure
+
+We achieve code simplicity by measuring code complexity and by code
+reviews where anything hard to understand at first glance is red flagged.
 
 ```notes
 We consider multi-purpose code a reason to reject commit during
 review. Keeping code simpler is more important to us than even
 writing fast software, or even covering every possible edge case.
 ```
+
+## Bug prevention: short-lived branches
+
+Each feature, bug, refactoring gets its own local Git branch.
+Long running branches with lots of changes are actively discouraged
+by the team.
+
+My typical branch is a couple of hours old before it gets merged
+back into the master.
+
+```notes
+Single small feature branches are easier to review, easier to merge,
+and allow other people to keep developing in parallel.
+
+I wish we could enforce maximum age of the branch before abandoning it.
+```
+
+## Tests themselves
+
+(Unit) testing code goes hand in hand with the production code.
+
+> Use same review and code quality rules for the testing code.
+
 
 ## When learning backfires
 
