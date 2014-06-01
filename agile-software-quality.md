@@ -135,8 +135,9 @@ while large tests [do not](https://github.com/bahmutov/talks/blob/master/coverag
 In a complex system your tester will cover different parts of the code using
 different data from your actual clients.
 
-This goes back to the Ian Brady's presentation last time - his explanation
-of the problem space (infinite) was all about how testers miss bugs that users
+This goes back to the Ian Bott's presentation at the
+[previous meetup](http://www.meetup.com/Automated-Testing-Boston/events/177488452/)
+- his explanation of the problem space (infinite) was all about how testers miss bugs that users
 have discovered.
 ```
 
@@ -170,8 +171,116 @@ to get real time picture of all errors in your system.
 
 ```notes
 Setting up automatic exception reporting system like Sentry
-will be the best investment in quality you can make in 1 hour of time
+will be THE BEST investment in quality you can make in 1 hour of time.
 ```
+
+---
+![Sentry error stream](https://raw.github.com/bahmutov/talks/master/images/sentry.png)
+
+```notes
+Sentry shows number of times each error has happened, making initial triage
+obvious.
+```
+
+---
+![Sentry error](https://raw.github.com/bahmutov/talks/master/images/sentry-error.png)
+
+```notes
+There is plenty of information with each error, including stack, and any additional
+information
+```
+
+## Sentry
+
+More details how to setup Sentry for client code in
+[several blog posts](http://bahmutov.calepin.co/tag/sentry.html).
+
+Automatic exception reporting worked wonders and removed need to do a lot of
+manual front end testing.
+
+## Quick fixes for reported exceptions
+
+* User reports a bug, including reproduction steps
+* Developer tries to recreate the bug.
+* Back and fourth replies
+* Finally, the developer recreates the steps and see the bug
+
+> Aha, if the user enters '-1' in date field everything goes crazy!
+
+```notes
+Typical amount of information described by the user / tester is only
+the surface visible to the user. It takes a long debug cycle to
+even recreate the bug. Some bugs are transient and happen only very
+infrequently
+```
+
+## Quick fix: bug context
+
+> What if every exception reported to Sentry carried a lot of context
+information: stack, variables, inputs, environment setup?
+
+Then a developer can determine the root cause of the error by looking
+at the exception information.
+
+## Quick fix: assertions everywhere
+
+We use [paranoid coding](http://bahmutov.calepin.co/paranoid-coding.html).
+
+```js
+function foo(name, age) {
+  check.verify.unemptyString(name, 'Expected a name ' + name);
+  check.verify.positiveNumber(age, 'Expected age to be positive ' + name + ' ' + age);
+  ...
+}
+```
+
+```notes
+Paranoid coding is an extreme degree of defensive coding. We do not
+trust any input to any function, especially if the input is coming from
+other systems or from the user.
+```
+
+## Quick fix: attitude
+
+> "Brian, don't be an optimist"
+>             Kensho developers (other than Brian)
+
+```notes
+During code reviews we flag things that trust their inputs too much.
+```
+
+## Quick fix: assertions revisited
+
+* assertions document the code
+* how much defensive coding to write?
+  * depends on the [distance](http://bahmutov.calepin.co/defensive-distance.html)
+* assertions are like tightening the screws and introducing logical type system WHEN we need one
+
+## Quick fix: lazy assertions
+
+To avoid typing too much and performance penalty, we wrote
+[lazy-ass](https://github.com/bahmutov/lazy-ass) - lazy assertions with async throw if needed.
+
+```js
+lazyAss(check.unemptyString(name), 'Expected a name', name);
+lazyAss(check.positiveNumber(age), 'Expected age to be positive', name, age);
+```
+
+## Error monitoring: larger picture
+
+> We flipped the defensive programming on its head
+
+* Typically assertions are only used in DEBUG mode and are removed in production system.
+* We benefit from assertions in PRODUCTION to catch unexpected situations.
+
+## Error monitoring: bug prevention
+
+We run typical local -> debug -> staging -> production environments.
+Error reporting is enabled in debug, staging and production.
+We use *staging* for demos and internal feature feedback.
+
+> Error monitoring in staging allows us to catch and prevent errors
+from going into production.
 
 ## Bug prevention: code reviews
 
