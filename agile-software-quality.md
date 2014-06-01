@@ -44,10 +44,11 @@ process at MathWorks or even at my other startups.
 
 Small (15 people) startup [trying to change](http://goo.gl/exPHEX) the world of financial analysis.
 
-* front end: angularjs, D3, Django
+* front end: *angularjs*, *D3*, *Django*
 * gruntjs for building the front-end
-* back end: Python
+* back end: *Python*
 * puppet / chef / docker deployment
+* *git* / amazon / sublime / webstorm
 
 ## Starting fresh: the biggest advantage
 
@@ -62,10 +63,10 @@ other customers and legacy support worries.
 
 ## Moving target
 
-We are always delivering a prototype-quality software to
+We are always delivering a prototype feature to
 find IF it solves customer's need.
 
-Then we tighten the screws and make it maintainable in the long run.
+Only then we tighten the screws and make it maintainable in the long run.
 
 ## 2 goals
 
@@ -122,6 +123,23 @@ your operating system has bugs, your printer driver has bugs, your favorite webs
 has bugs. The sooner you accept this fact the better.
 ```
 
+## Axiom 2
+
+> The way you or your tester uses software is different
+from the way your users do.
+
+Small tests benefit from 100% code coverage,
+while large tests [do not](https://github.com/bahmutov/talks/blob/master/coverage-and-tests.md).
+
+```notes
+In a complex system your tester will cover different parts of the code using
+different data from your actual clients.
+
+This goes back to the Ian Brady's presentation last time - his explanation
+of the problem space (infinite) was all about how testers miss bugs that users
+have discovered.
+```
+
 ## No testing?
 
 > What do we do instead?
@@ -133,12 +151,26 @@ to avoid some of the more time-consuming testing (integration, manual user inter
 
 ## 2 part solution
 
-* bug prevention
 * extremely quick fixes
+* bug prevention
 
 ```notes
 The best way to reduce need for testing is to prevent bugs from sneaking in.
 But if the discovered bug is fixed very quickly - the users forgive.
+In fact I tend to respect quick bug turn around more - it shows that the
+company knows how to develop software.
+```
+
+## Quick fixes: monitoring
+
+> Users do not see ALL exceptions and hardly report ANY.
+
+Use exception reporting tools, like [Sentry](https://getsentry.com/welcome/)
+to get real time picture of all errors in your system.
+
+```notes
+Setting up automatic exception reporting system like Sentry
+will be the best investment in quality you can make in 1 hour of time
 ```
 
 ## Bug prevention: code reviews
@@ -150,7 +182,7 @@ open source review system.
 
 ```notes
 provides good interface for updating branch after feedback,
-squashes each branch into single commit for merging
+squashes each branch into single commit for merging.
 ```
 
 ## Bug prevention: simplicity
