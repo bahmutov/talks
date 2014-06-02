@@ -205,7 +205,7 @@ manual front end testing.
 * Back and fourth replies
 * Finally, the developer recreates the steps and see the bug
 
-> Aha, if the user enters '-1' in date field everything goes crazy!
+> Aha, if the user enters '-1' in age field everything goes crazy!
 
 ```notes
 Typical amount of information described by the user / tester is only
@@ -229,7 +229,8 @@ We use [paranoid coding](http://bahmutov.calepin.co/paranoid-coding.html).
 ```js
 function foo(name, age) {
   check.verify.unemptyString(name, 'Expected a name ' + name);
-  check.verify.positiveNumber(age, 'Expected age to be positive ' + name + ' ' + age);
+  check.verify.positiveNumber(age,
+    'Expected age to be positive ' + name + ' ' + age);
   ...
 }
 ```
@@ -263,7 +264,8 @@ To avoid typing too much and performance penalty, we wrote
 
 ```js
 lazyAss(check.unemptyString(name), 'Expected a name', name);
-lazyAss(check.positiveNumber(age), 'Expected age to be positive', name, age);
+lazyAss(check.positiveNumber(age),
+  'Expected age to be positive', name, age);
 ```
 
 ## Error monitoring: larger picture
@@ -324,12 +326,54 @@ and allow other people to keep developing in parallel.
 I wish we could enforce maximum age of the branch before abandoning it.
 ```
 
+## Quick fixes: short cycle
+
+Long iterations between deployments kill a chance to fix the bug quickly.
+
+* Local dev version of the code is very different from production
+* The developer has to understand the code AGAIN in order to fix it.
+
+## Agile team with quick releases
+
+* Without lots of features to support, releases should be frequent.
+  * If anything goes wrong, fix it quickly
+* Small team can direct the bug to the developer who has just worked on it.
+
+## Bug prevention: write less code
+
+* Use 3rd party libraries
+* Stop writing code
+
+## Stop writing code: example
+
+```js
+var line = d3.svg.line()
+  .x(function (d) { return xScale(new Date(d.date)); })
+  .y(function (d) { return yScale(+d.y); });
+// to
+var line = d3.svg.line()
+  .x(d3h('date', d3h.newDate, xScale))
+  .y(d3h('y', Number, yScale));
+```
+
+We wrote [d3-helpers](https://github.com/bahmutov/d3-helpers) that construct
+callbacks for D3 charts with no imperative code.
+
+## Bug prevention: open source software
+
+All libraries we use are open source: lots of people are discovering
+and fixing bugs.
+
+We pay it forward by open sourcing little utilities:
+[d3-helpers](https://github.com/bahmutov/d3-helpers),
+[functional-pipeline](https://github.com/bahmutov/functional-pipeline),
+[lazy-ass](https://github.com/bahmutov/lazy-ass)
+
 ## Tests themselves
 
 (Unit) testing code goes hand in hand with the production code.
 
 > Use same review and code quality rules for the testing code.
-
 
 ## When learning backfires
 
@@ -348,6 +392,23 @@ Leaving on the bleeding edge is dangerous. Most developers want to be
 close without falling over. 1 minor version behind the latest stable
 version is a good place to keep everyone happy.
 ```
+
+## Sheep herding
+
+* Work on fix
+* Commit to source
+* Observe dev deployment - verify
+* Observe staging deployment - verify
+* Observe prod deployment - verify
+
+Same developer in very close time sequence.
+
+```notes
+When same developer guides the feature through dev, then staging then
+production environment, without a significant time gap, the features
+land smoothly
+```
+
 
 [slides-now-title]: "Agile quality by @bahmutov"
 [slides-now-theme]: "full"
