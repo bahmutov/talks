@@ -409,6 +409,20 @@ production environment, without a significant time gap, the features
 land smoothly
 ```
 
+## TODOs
+
+Do not keep technical debt in your head, but lighter than
+JIRA issues.
+
+```
+TODO(gleb): fix the loop conditions
+```
+
+Custom Arcanist linting rule. Same as [todo-format](https://github.com/bahmutov/todo-format),
+[grunt-todos](https://github.com/kevinlacotaco/grunt-todos).
+
+### Extensions: expires, jira ticker number
+
 
 [slides-now-title]: "Agile quality by @bahmutov"
 [slides-now-theme]: "full"
