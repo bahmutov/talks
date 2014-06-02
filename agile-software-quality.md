@@ -423,6 +423,39 @@ Custom Arcanist linting rule. Same as [todo-format](https://github.com/bahmutov/
 
 ### Extensions: expires, jira ticker number
 
+## 3Ps
+
+* Products
+* Process
+* People
+
+```notes
+Improvements in quality can be of 3 types: fixing bug or using different
+products is the first category. For example using New Relic or Sentry
+is in the "products" category.
+
+Real time exception monitoring or static analysis build step are examples
+of the process improvement.
+
+Running book clubs, hackathons and company's libraries are investing in
+the people
+```
+
+## 3Ps
+
+Based on the [blog posts](http://bahmutov.calepin.co/)
+
+* 57 - [Products](http://bahmutov.calepin.co/category/products.html)
+* 22 - [Process](http://bahmutov.calepin.co/category/process.html)
+* 7  - [People](http://bahmutov.calepin.co/category/people.html)
+
+```notes
+It is much easier to improve quality by fixing a bug or
+using a specific product. It is much harder to improve the company's
+process, and it extremely hard to improve the people. I personally
+believe that in terms of impact improving the people pays off
+much larger dividends even in the medium run
+```
 
 [slides-now-title]: "Agile quality by @bahmutov"
 [slides-now-theme]: "full"
