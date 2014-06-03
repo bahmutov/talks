@@ -375,6 +375,47 @@ callbacks for D3 charts with no imperative code.
 ---
 ![code readability](https://raw.github.com/bahmutov/talks/master/images/code-reading-order.png)
 
+## Bug prevention: functional-lite programming
+
+```js
+// search string might contain multiple ticker symbols to search for
+// GOOG, AMZN, F
+// GOOG AMZN F ^GSPC
+multipleQuery: function (str) {
+  lazyAss(check.string(str),
+    'ticker query should be a string, not', str);
+  str = str.toLowerCase();
+
+  var tickers = splitSearchString(str);
+  lazyAss(check.array(tickers),
+    'cannot split ticker search string', str);
+
+  return fetchTickers.then(function (tickerData) {
+    lazyAss(check.array(tickerData),
+      'ticker data should be an array, got', tickerData);
+    return {
+      results: _(tickerData)
+        .filter(_.partial(hasAnySymbol, tickers))
+        .sortBy('ticker')
+        .value()
+    };
+  });
+},
+```
+
+```notes
+This is an example of our typical JavaScript code.
+There are defensive assertions at each step to ease the debugging,
+asynchronous pipeline using promises (fetchTickers.then)
+and a chained data processing (filtering and sorting) using 3rd party
+library.
+
+We find this functional-lite data processing to be more error-proof
+than object-oriented or imperative programming. We still have some
+stateful objects, for ideas how to combine functional and object-oriented
+programming see "Boundaries" talk by Gary Bernhardt
+https://www.destroyallsoftware.com/talks/boundaries
+
 ## Bug prevention: open source software
 
 All libraries we use are open source: lots of people are discovering
