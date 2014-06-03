@@ -50,6 +50,15 @@ Small (15 people) startup [trying to change](http://goo.gl/exPHEX) the world of 
 * puppet / chef / docker deployment
 * *git* / amazon / sublime / webstorm
 
+## Dev pipeline
+
+* Local - unit tests
+* Debug system - unit tests, automation tests, human tests
+  * [casperjs](http://casperjs.org/)
+  * outsourced testing team
+* Staging - human tests, demos
+* Production - human tests, demos
+
 ## Starting fresh: the biggest advantage
 
 > As a small starting company you can deliver a feature solving the
@@ -198,6 +207,8 @@ More details how to setup Sentry for client code in
 Automatic exception reporting worked wonders and removed need to do a lot of
 manual front end testing.
 
+Sentry is good compliment to New Relic and Logstash.
+
 ## Quick fixes for reported exceptions
 
 * User reports a bug, including reproduction steps
@@ -266,6 +277,8 @@ To avoid typing too much and performance penalty, we wrote
 lazyAss(check.unemptyString(name), 'Expected a name', name);
 lazyAss(check.positiveNumber(age),
   'Expected age to be positive', name, age);
+lazyAssync(items.length === 10,
+  'Hmm weird, unexpecte number of items', items);
 ```
 
 ## Error monitoring: larger picture
@@ -359,6 +372,9 @@ var line = d3.svg.line()
 We wrote [d3-helpers](https://github.com/bahmutov/d3-helpers) that construct
 callbacks for D3 charts with no imperative code.
 
+---
+![code readability](https://raw.github.com/bahmutov/talks/master/images/code-reading-order.png)
+
 ## Bug prevention: open source software
 
 All libraries we use are open source: lots of people are discovering
@@ -367,7 +383,8 @@ and fixing bugs.
 We pay it forward by open sourcing little utilities:
 [d3-helpers](https://github.com/bahmutov/d3-helpers),
 [functional-pipeline](https://github.com/bahmutov/functional-pipeline),
-[lazy-ass](https://github.com/bahmutov/lazy-ass)
+[lazy-ass](https://github.com/bahmutov/lazy-ass),
+[stop-angular-overrides](https://github.com/bahmutov/stop-angular-overrides)
 
 ## Tests themselves
 
@@ -456,6 +473,19 @@ process, and it extremely hard to improve the people. I personally
 believe that in terms of impact improving the people pays off
 much larger dividends even in the medium run
 ```
+
+## Keep master clean
+
+* File watchers run build and tests locally
+* [Arcanist](https://github.com/phacility/arcanist) rus linting and unit
+tests (for changes) before generating review requests or landing changes.
+* Unit tests and automation tests before rolling back change that breaks them.
+
+## People: onboarding
+
+* Wiki vs README.md: README.md
+* Follow conventions: `make install` vs `make test`
+* Specify exact dependencies
 
 [slides-now-title]: "Agile quality by @bahmutov"
 [slides-now-theme]: "full"
