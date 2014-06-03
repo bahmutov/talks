@@ -386,6 +386,15 @@ We pay it forward by open sourcing little utilities:
 [lazy-ass](https://github.com/bahmutov/lazy-ass),
 [stop-angular-overrides](https://github.com/bahmutov/stop-angular-overrides)
 
+```notes
+Open sourced projects can take advantage of the infrastructure
+provided by the internet companies:
+
+- source control and space (github, bitbucket)
+- build and test servers (codeship.io, drone.io, travis.ci)
+- code coverage and quality (coveralls.io, codeclimate.com)
+```
+
 ## Tests themselves
 
 (Unit) testing code goes hand in hand with the production code.
@@ -440,7 +449,7 @@ Custom Arcanist linting rule. Same as [todo-format](https://github.com/bahmutov/
 
 ### Extensions: expires, jira ticker number
 
-## 3Ps
+## Focus on changing 3Ps
 
 * Products
 * Process
