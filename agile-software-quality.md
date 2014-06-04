@@ -177,8 +177,8 @@ to avoid some of the more time-consuming testing (integration, manual user inter
 
 ## Kensho engineering goals
 
-* extremely quick fixes
-* bug prevention
+* fix any bugs extremely quickly
+* prevent bugs from sneaking in
 
 ```notes
 The best way to reduce need for testing is to prevent bugs from sneaking in.
@@ -260,6 +260,9 @@ Automatic exception reporting worked wonders and removed need to do a lot of
 manual front end testing.
 
 Sentry is good compliment to New Relic and Logstash.
+
+---
+![fullscreen](https://raw.github.com/bahmutov/talks/master/images/need-to-subscribe-to-error-monitoring.png)
 
 ## Quick fixes for reported exceptions
 
