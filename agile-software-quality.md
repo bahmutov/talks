@@ -44,11 +44,12 @@ process at MathWorks or even at my other startups.
 
 Small (15 people) startup [trying to change](http://goo.gl/exPHEX) the world of financial analysis.
 
-* front end: *angularjs*, *D3*, *Django*
+* front end: angularjs, D3, Django
 * gruntjs for building the front-end
-* back end: *Python*
+* back end: Python
+* JIRA, Phabricator, Zulip, Google Apps
 * puppet / chef / docker deployment
-* *git* / amazon / sublime / webstorm
+* git / Amazon / sublime / webstorm
 
 ## Dev pipeline
 
@@ -83,7 +84,7 @@ Only then we tighten the screws and make it maintainable in the long run.
 2. Deliver software that *works*
 
 ---
-![Hard to run and test](https://raw.github.com/bahmutov/talks/master/images/mr-incredible.png)
+![Hard to run and test fullscreen](https://raw.github.com/bahmutov/talks/master/images/mr-incredible.png)
 
 ```notes
 This is a scene from one of my favorite movies "The Incredibles".
@@ -173,7 +174,7 @@ Let me try describe a solution we have been using very successfully at Kensho
 to avoid some of the more time-consuming testing (integration, manual user interface testing).
 ```
 
-## Our goals
+## Kensho engineering goals
 
 * extremely quick fixes
 * bug prevention
@@ -234,7 +235,7 @@ If you are a mobile developer, use Crashlytics or Apphance
 ```
 
 ---
-![Sentry error stream](https://raw.github.com/bahmutov/talks/master/images/sentry.png)
+![Sentry error stream fullscreen](https://raw.github.com/bahmutov/talks/master/images/sentry.png)
 
 ```notes
 Sentry shows number of times each error has happened, making initial triage
@@ -242,7 +243,7 @@ obvious.
 ```
 
 ---
-![Sentry error](https://raw.github.com/bahmutov/talks/master/images/sentry-error.png)
+![Sentry error fullscreen](https://raw.github.com/bahmutov/talks/master/images/sentry-error.png)
 
 ```notes
 There is plenty of information with each error, including stack, and any additional
@@ -358,6 +359,9 @@ open source review system.
 provides good interface for updating branch after feedback,
 squashes each branch into single commit for merging.
 ```
+
+---
+![Phabricator fullscreen](https://raw.github.com/bahmutov/talks/master/images/phabricator-screenshot.png)
 
 ## Process: short-lived branches
 
