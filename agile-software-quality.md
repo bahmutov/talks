@@ -82,6 +82,20 @@ Only then we tighten the screws and make it maintainable in the long run.
 1. Deliver software *quickly*
 2. Deliver software that *works*
 
+---
+![Hard to run and test](https://raw.github.com/bahmutov/talks/master/images/mr-incredible.png)
+
+```notes
+This is a scene from one of my favorite movies "The Incredibles".
+The superhero is discovered and tries to outrun the guns shooting expanding
+sticky rubber balls. Soon he is buried under them.
+
+You can watch this particular scene at http://youtu.be/dK_OKGELcn0?t=1m33s
+
+Anyone trying to write large tests, user interface tests
+can relate to this scene.
+```
+
 ## Quick feature delivery
 
 - MathWorks: at least 6 months / 3-6 weeks.
@@ -159,7 +173,7 @@ Let me try describe a solution we have been using very successfully at Kensho
 to avoid some of the more time-consuming testing (integration, manual user interface testing).
 ```
 
-## 2 part solution
+## Our goals
 
 * extremely quick fixes
 * bug prevention
@@ -171,7 +185,41 @@ In fact I tend to respect quick bug turn around more - it shows that the
 company knows how to develop software.
 ```
 
-## Quick fixes: monitoring
+## Quality: focus on changing 3Ps
+
+* Products
+* Process
+* People
+
+```notes
+Improvements in quality can be of 3 types: fixing bug or using different
+products is the first category. For example using New Relic or Sentry
+is in the "products" category.
+
+Real time exception monitoring or static analysis build step are examples
+of the process improvement.
+
+Running book clubs, hackathons and company's libraries are investing in
+the people
+```
+
+## 3Ps
+
+Based on the [blog posts](http://bahmutov.calepin.co/)
+
+* 57 - [Products](http://bahmutov.calepin.co/category/products.html)
+* 22 - [Process](http://bahmutov.calepin.co/category/process.html)
+* 7  - [People](http://bahmutov.calepin.co/category/people.html)
+
+```notes
+It is much easier to improve quality by fixing a bug or
+using a specific product. It is much harder to improve the company's
+process, and it extremely hard to improve the people. I personally
+believe that in terms of impact improving the people pays off
+much larger dividends even in the medium run
+```
+
+## Process: real time monitoring
 
 > Users do not see ALL exceptions and hardly report ANY.
 
@@ -199,7 +247,7 @@ There is plenty of information with each error, including stack, and any additio
 information
 ```
 
-## Sentry
+## Product: Sentry
 
 More details how to setup Sentry for client code in
 [several blog posts](http://bahmutov.calepin.co/tag/sentry.html).
@@ -233,7 +281,7 @@ information: stack, variables, inputs, environment setup?
 Then a developer can determine the root cause of the error by looking
 at the exception information.
 
-## Quick fix: assertions everywhere
+## Process: assertions everywhere
 
 We use [paranoid coding](http://bahmutov.calepin.co/paranoid-coding.html).
 
@@ -252,7 +300,7 @@ trust any input to any function, especially if the input is coming from
 other systems or from the user.
 ```
 
-## Quick fix: attitude
+## People: developer attitude
 
 > "Brian, don't be an optimist"
 >             Kensho developers (other than Brian)
@@ -261,14 +309,14 @@ other systems or from the user.
 During code reviews we flag things that trust their inputs too much.
 ```
 
-## Quick fix: assertions revisited
+## Process: assertions revisited
 
 * assertions document the code
 * how much defensive coding to write?
   * depends on the [distance](http://bahmutov.calepin.co/defensive-distance.html)
 * assertions are like tightening the screws and introducing logical type system WHEN we need one
 
-## Quick fix: lazy assertions
+## Product: lazy assertions
 
 To avoid typing too much and performance penalty, we wrote
 [lazy-ass](https://github.com/bahmutov/lazy-ass) - lazy assertions with async throw if needed.
@@ -281,14 +329,14 @@ lazyAssync(items.length === 10,
   'Hmm weird, unexpecte number of items', items);
 ```
 
-## Error monitoring: larger picture
+## Process: assertions' role
 
 > We flipped the defensive programming on its head
 
 * Typically assertions are only used in DEBUG mode and are removed in production system.
 * We benefit from assertions in PRODUCTION to catch unexpected situations.
 
-## Error monitoring: bug prevention
+## Process: rolling error monitoring
 
 We run typical local -> debug -> staging -> production environments.
 Error reporting is enabled in debug, staging and production.
@@ -297,7 +345,7 @@ We use *staging* for demos and internal feature feedback.
 > Error monitoring in staging allows us to catch and prevent errors
 from going into production.
 
-## Bug prevention: code reviews
+## Process: code reviews
 
 We are very happy with [Phabricator](http://phabricator.org/)
 open source review system.
@@ -309,21 +357,7 @@ provides good interface for updating branch after feedback,
 squashes each branch into single commit for merging.
 ```
 
-## Bug prevention: simplicity
-
-> What matters for simplicity is that there's no interleaving
->                          Rich Hickley, the author of Closure
-
-We achieve code simplicity by measuring code complexity and by code
-reviews where anything hard to understand at first glance is red flagged.
-
-```notes
-We consider multi-purpose code a reason to reject commit during
-review. Keeping code simpler is more important to us than even
-writing fast software, or even covering every possible edge case.
-```
-
-## Bug prevention: short-lived branches
+## Process: short-lived branches
 
 Each feature, bug, refactoring gets its own local Git branch.
 Long running branches with lots of changes are actively discouraged
@@ -339,6 +373,26 @@ and allow other people to keep developing in parallel.
 I wish we could enforce maximum age of the branch before abandoning it.
 ```
 
+## Process: code simplicity
+
+> What matters for simplicity is that there's no interleaving
+>                          Rich Hickley, the author of Closure
+
+We achieve code simplicity by measuring code complexity and by code
+reviews where anything hard to understand at first glance is red flagged.
+
+```notes
+We consider multi-purpose code a reason to reject commit during
+review. Keeping code simpler is more important to us than even
+writing fast software, or even covering every possible edge case.
+```
+
+## Test code
+
+(Unit) testing code goes hand in hand with the production code.
+
+> Use same review and code quality rules for the testing code.
+
 ## Quick fixes: short cycle
 
 Long iterations between deployments kill a chance to fix the bug quickly.
@@ -352,10 +406,30 @@ Long iterations between deployments kill a chance to fix the bug quickly.
   * If anything goes wrong, fix it quickly
 * Small team can direct the bug to the developer who has just worked on it.
 
-## Bug prevention: write less code
+## Process: write less code
 
 * Use 3rd party libraries
 * Stop writing code
+
+## Process: be part of open source
+
+All libraries we use are open source: lots of people are discovering
+and fixing bugs.
+
+We pay it forward by open sourcing little utilities:
+[d3-helpers](https://github.com/bahmutov/d3-helpers),
+[functional-pipeline](https://github.com/bahmutov/functional-pipeline),
+[lazy-ass](https://github.com/bahmutov/lazy-ass),
+[stop-angular-overrides](https://github.com/bahmutov/stop-angular-overrides)
+
+```notes
+Open sourced projects can take advantage of the infrastructure
+provided by the internet companies:
+
+- source control and space (github, bitbucket)
+- build and test servers (codeship.io, drone.io, travis.ci)
+- code coverage and quality (coveralls.io, codeclimate.com)
+```
 
 ## Stop writing code: example
 
@@ -375,7 +449,7 @@ callbacks for D3 charts with no imperative code.
 ---
 ![code readability](https://raw.github.com/bahmutov/talks/master/images/code-reading-order.png)
 
-## Bug prevention: functional-lite programming
+## People: functional-lite programming
 
 ```js
 // search string might contain multiple ticker symbols to search for
@@ -415,32 +489,6 @@ than object-oriented or imperative programming. We still have some
 stateful objects, for ideas how to combine functional and object-oriented
 programming see "Boundaries" talk by Gary Bernhardt
 https://www.destroyallsoftware.com/talks/boundaries
-
-## Bug prevention: open source software
-
-All libraries we use are open source: lots of people are discovering
-and fixing bugs.
-
-We pay it forward by open sourcing little utilities:
-[d3-helpers](https://github.com/bahmutov/d3-helpers),
-[functional-pipeline](https://github.com/bahmutov/functional-pipeline),
-[lazy-ass](https://github.com/bahmutov/lazy-ass),
-[stop-angular-overrides](https://github.com/bahmutov/stop-angular-overrides)
-
-```notes
-Open sourced projects can take advantage of the infrastructure
-provided by the internet companies:
-
-- source control and space (github, bitbucket)
-- build and test servers (codeship.io, drone.io, travis.ci)
-- code coverage and quality (coveralls.io, codeclimate.com)
-```
-
-## Tests themselves
-
-(Unit) testing code goes hand in hand with the production code.
-
-> Use same review and code quality rules for the testing code.
 
 ## When learning backfires
 
@@ -490,40 +538,6 @@ Custom Arcanist linting rule. Same as [todo-format](https://github.com/bahmutov/
 
 ### Extensions: expires, jira ticker number
 
-## Focus on changing 3Ps
-
-* Products
-* Process
-* People
-
-```notes
-Improvements in quality can be of 3 types: fixing bug or using different
-products is the first category. For example using New Relic or Sentry
-is in the "products" category.
-
-Real time exception monitoring or static analysis build step are examples
-of the process improvement.
-
-Running book clubs, hackathons and company's libraries are investing in
-the people
-```
-
-## 3Ps
-
-Based on the [blog posts](http://bahmutov.calepin.co/)
-
-* 57 - [Products](http://bahmutov.calepin.co/category/products.html)
-* 22 - [Process](http://bahmutov.calepin.co/category/process.html)
-* 7  - [People](http://bahmutov.calepin.co/category/people.html)
-
-```notes
-It is much easier to improve quality by fixing a bug or
-using a specific product. It is much harder to improve the company's
-process, and it extremely hard to improve the people. I personally
-believe that in terms of impact improving the people pays off
-much larger dividends even in the medium run
-```
-
 ## Keep master clean
 
 * File watchers run build and tests locally
@@ -539,3 +553,4 @@ tests (for changes) before generating review requests or landing changes.
 
 [slides-now-title]: "Agile quality by @bahmutov"
 [slides-now-theme]: "full"
+[slides-now-timer]: "45"
