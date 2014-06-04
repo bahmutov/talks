@@ -477,6 +477,18 @@ callbacks for D3 charts with no imperative code.
 ---
 ![code readability](https://raw.github.com/bahmutov/talks/master/images/code-reading-order.png)
 
+```notes
+We wrote several tiny utilities to alleviate JavaScript's
+reading order problem: you read properties and method calls left to right,
+but you read functional calls from inside out.
+
+functional-pipeline and d3-helpers allow composing new functions
+where every steps read very naturally left to right.
+
+Remember: naturally looking code is easier to understand, thus
+making logical bugs or even syntax bugs less likely.
+```
+
 ## People: functional-lite programming
 
 ```js
@@ -517,6 +529,7 @@ than object-oriented or imperative programming. We still have some
 stateful objects, for ideas how to combine functional and object-oriented
 programming see "Boundaries" talk by Gary Bernhardt
 https://www.destroyallsoftware.com/talks/boundaries
+```
 
 ## When learning backfires
 
