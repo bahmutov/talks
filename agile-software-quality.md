@@ -166,6 +166,15 @@ have discovered.
 ```
 
 ---
+![Desired paths fullscreen](https://raw.github.com/bahmutov/talks/master/images/desired-paths.png)
+
+```notes
+"Desired paths" by Jan-Dirk van der Burg http://www.olifantenpaadjes.nl/
+
+Do not build an elaborate path until you are sure this is where the users are walking
+```
+
+---
 ![fullscreen](https://raw.github.com/bahmutov/talks/master/images/i-dont-always-test-everything.png)
 
 ```notes
