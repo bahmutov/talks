@@ -354,9 +354,7 @@ from going into production.
 
 ## People: project onboarding
 
-* Wiki vs README.md: README.md
-* Follow conventions: `make install` vs `make test`
-* Specify exact dependencies
+TO BE FILLED
 
 ## Final thoughts
 
