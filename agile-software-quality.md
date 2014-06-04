@@ -165,11 +165,12 @@ This goes back to the Ian Bott's presentation at the
 have discovered.
 ```
 
-## No testing?
-
-> What do we do instead?
+---
+![fullscreen](https://raw.github.com/bahmutov/talks/master/images/i-dont-always-test-everything.png)
 
 ```notes
+What do we do instead?
+
 Let me try describe a solution we have been using very successfully at Kensho
 to avoid some of the more time-consuming testing (integration, manual user interface testing).
 ```
