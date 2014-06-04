@@ -171,7 +171,7 @@ have discovered.
 ```notes
 What do we do instead?
 
-Let me try describe a solution we have been using very successfully at Kensho
+Let me try to describe a solution we have been using very successfully at Kensho
 to avoid some of the more time-consuming testing (integration, manual user interface testing).
 ```
 
