@@ -333,8 +333,17 @@ lazyAss(check.unemptyString(name), 'Expected a name', name);
 lazyAss(check.positiveNumber(age),
   'Expected age to be positive', name, age);
 lazyAssync(items.length === 10,
-  'Hmm weird, unexpecte number of items', items);
+  'Hmm weird, unexpected number of items', items);
 ```
+
+## Process: rolling error monitoring
+
+We run typical *local -> debug -> staging -> production* environments.
+Crash reporting is enabled in debug, staging and production.
+We use *staging* for demos and internal feature feedback.
+
+> Error monitoring in staging allows us to catch and prevent errors
+from going into production.
 
 ## Process: assertions' role
 
@@ -343,14 +352,40 @@ lazyAssync(items.length === 10,
 * Typically assertions are only used in DEBUG mode and are removed in production system.
 * We benefit from assertions in PRODUCTION to catch unexpected situations.
 
-## Process: rolling error monitoring
+## People: project onboarding
 
-We run typical local -> debug -> staging -> production environments.
-Error reporting is enabled in debug, staging and production.
-We use *staging* for demos and internal feature feedback.
+* Wiki vs README.md: README.md
+* Follow conventions: `make install` vs `make test`
+* Specify exact dependencies
 
-> Error monitoring in staging allows us to catch and prevent errors
-from going into production.
+## Final thoughts
+
+A little bug prevention goes a long way towards higher quality.
+
+* Product: crash reporting / error monitoring software
+* Process: defensive programming
+* People: project on-boarding
+
+
+```notes
+These 3 items, one from each category, will change your team's
+productivity and improve the final software quality, mitigating
+the need to write lots and lots of tests.
+
+It is possible for a small team to establish itself and compete
+against much larger companies, but you would need to think about the
+software development process and not be afraid to try new things,
+even if you have to invent them.
+```
+
+# Bonus
+
+* This presentation: [http://goo.gl/MafEMk](http://goo.gl/MafEMk)
+* Blog: [http://bahmutov.calepin.co/](http://bahmutov.calepin.co/)
+* Tools: [http://glebbahmutov.com/](http://glebbahmutov.com/)
+* [@bahmutov](https://twitter.com/bahmutov)
+
+And now if we have time ...
 
 ## Process: code reviews
 
@@ -569,12 +604,6 @@ Custom Arcanist linting rule. Same as [todo-format](https://github.com/bahmutov/
 * [Arcanist](https://github.com/phacility/arcanist) rus linting and unit
 tests (for changes) before generating review requests or landing changes.
 * Unit tests and automation tests before rolling back change that breaks them.
-
-## People: onboarding
-
-* Wiki vs README.md: README.md
-* Follow conventions: `make install` vs `make test`
-* Specify exact dependencies
 
 [slides-now-title]: "Agile quality by @bahmutov"
 [slides-now-theme]: "full"
