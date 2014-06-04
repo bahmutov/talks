@@ -229,6 +229,8 @@ to get real time picture of all errors in your system.
 ```notes
 Setting up automatic exception reporting system like Sentry
 will be THE BEST investment in quality you can make in 1 hour of time.
+Works in the browser and back end for most platforms.
+If you are a mobile developer, use Crashlytics or Apphance
 ```
 
 ---
@@ -378,7 +380,8 @@ I wish we could enforce maximum age of the branch before abandoning it.
 > What matters for simplicity is that there's no interleaving
 >                          Rich Hickley, the author of Closure
 
-We achieve code simplicity by measuring code complexity and by code
+We achieve code simplicity by measuring
+[code complexity](https://github.com/vigetlabs/grunt-complexity) and by code
 reviews where anything hard to understand at first glance is red flagged.
 
 ```notes
@@ -392,8 +395,9 @@ writing fast software, or even covering every possible edge case.
 (Unit) testing code goes hand in hand with the production code.
 
 > Use same review and code quality rules for the testing code.
+> Developers write code and test it.
 
-## Quick fixes: short cycle
+## Process: short cycle
 
 Long iterations between deployments kill a chance to fix the bug quickly.
 
@@ -405,6 +409,22 @@ Long iterations between deployments kill a chance to fix the bug quickly.
 * Without lots of features to support, releases should be frequent.
   * If anything goes wrong, fix it quickly
 * Small team can direct the bug to the developer who has just worked on it.
+
+## Features in short cycles
+
+* Work on fix or feature
+* Commit to source
+* Observe dev deployment - verify
+* Observe staging deployment - verify
+* Observe prod deployment - verify
+
+Same developer in very close time sequence.
+
+```notes
+When same developer guides the feature through dev, then staging then
+production environment, without a significant time gap, the features
+land smoothly.
+```
 
 ## Process: write less code
 
@@ -506,22 +526,6 @@ techniques or software versions. There is no antique software charm.
 Leaving on the bleeding edge is dangerous. Most developers want to be
 close without falling over. 1 minor version behind the latest stable
 version is a good place to keep everyone happy.
-```
-
-## Sheep herding
-
-* Work on fix
-* Commit to source
-* Observe dev deployment - verify
-* Observe staging deployment - verify
-* Observe prod deployment - verify
-
-Same developer in very close time sequence.
-
-```notes
-When same developer guides the feature through dev, then staging then
-production environment, without a significant time gap, the features
-land smoothly
 ```
 
 ## TODOs
