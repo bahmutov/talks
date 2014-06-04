@@ -244,6 +244,20 @@ Works in the browser and back end for most platforms.
 If you are a mobile developer, use Crashlytics or Apphance
 ```
 
+## Sentry Client JavaScript
+
+```
+<script src="//cdn.ravenjs.com/1.1.15/jquery,native/raven.min.js"></script>
+<script>
+Raven.config('https://public@app.getsentry.com/<API ID>').install();
+</script>
+```
+
+```notes
+Single line of code installs global exception handler.
+Similarly, server-side installation is very simple
+```
+
 ---
 ![Sentry error stream fullscreen](https://raw.github.com/bahmutov/talks/master/images/sentry.png)
 
