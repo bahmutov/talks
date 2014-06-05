@@ -56,10 +56,15 @@ Small ([15 people](http://www.kensho.com/#team)) startup
 
 * Local - unit tests
 * Debug system - unit tests, automation tests, human tests
-  * [casperjs](http://casperjs.org/)
+  * [CasperJS](http://casperjs.org/)
   * outsourced testing team
 * Staging - human tests, demos
 * Production - human tests, demos
+
+```notes
+We do not use Selenium, CasperJs that uses headless webkit works
+reliably for us. We also do not support IE < 10
+```
 
 ## Starting fresh: the biggest advantage
 
@@ -313,6 +318,15 @@ Sentry is good compliment to New Relic and Logstash.
 
 ---
 ![fullscreen](https://raw.github.com/bahmutov/talks/master/images/need-to-subscribe-to-error-monitoring.png)
+
+## No system testing at all?
+
+We do some high level testing using [CasperJS](http://casperjs.org/)
+against debug / staging environments.
+
+* Load a page.
+* Click "Load data".
+* Any page errors will be caught.
 
 ## Fixing a reported error - typical steps:
 
