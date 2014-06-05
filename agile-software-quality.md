@@ -202,7 +202,7 @@ to avoid some of the more time-consuming testing (integration, manual user inter
 
 ## Kensho engineering goals
 
-* fix every bug extremely quickly (< 1 day)
+* fix every found bug extremely quickly (< 1 day)
 * prevent bugs from sneaking in
 * find an engineering solution to any problem
 
