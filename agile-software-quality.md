@@ -394,14 +394,60 @@ When starting a project, the skills, the experience and the perspectives
 do not match.
 ```
 
+## New team member
+
+> Joe, can you help out with this? You do know JavaScript, right?
+
+## Skills
+
+```
+name   | prototypes | callbacks | jQuery
+------------------------------------------
+Tim    |     7      |      3    |    1
+Eve    |     1      |      9    |    5
+Joe    |     1      |      5    |    9
+```
+
+```notes
+Start ups usually require wider set of skills. Bringing a group of
+people to work on the project means the proficiency in a particular
+feature varies greatly.
+```
+
+## People: explicit project's skills required
+
+* List 2-3 books / tutorials / training courses required for each project.
+* Run a couple of training sessions
+
+Example: buy [JavaScript Books](http://bahmutov.calepin.co/javascript-books.html)
+for the office library.
+
+```notes
+Add to project's repository README.md a few books that one should read
+to be on the same page as other team members. Establishes common language
+and frame of reference.
+
+Spend 5 - 10 hours (an hour every couple of days), going through a book
+for a project. Everyone will catch up and fill the blanks, eliminating
+the skills mismatch.
+```
+
+---
+![horizontal library fullscreen](https://raw.github.com/bahmutov/talks/master/images/horizontal-library.jpg)
+
+```notes
+Example: buy a few books for the company's library and lay them horizontally.
+Makes them visible, sparks conversations.
+```
+
 ## Final thoughts
 
-A little bug prevention goes a long way towards higher quality.
+A small company can absolutely compete against larger ones,
+if one is willing to search for tools that work.
 
 * Product: crash reporting / error monitoring software
 * Process: defensive programming
 * People: project on-boarding
-
 
 ```notes
 These 3 items, one from each category, will change your team's
@@ -413,6 +459,16 @@ against much larger companies, but you would need to think about the
 software development process and not be afraid to try new things,
 even if you have to invent them.
 ```
+
+## The End
+
+* This presentation: [http://goo.gl/MafEMk](http://goo.gl/MafEMk)
+* Blog: [http://bahmutov.calepin.co/](http://bahmutov.calepin.co/)
+* Tools: [http://glebbahmutov.com/](http://glebbahmutov.com/)
+* [@bahmutov](https://twitter.com/bahmutov)
+* [Bonus material](https://github.com/bahmutov/talks/blob/master/agile-software-quality-bonus.md)
+
+### PS: Kensho is hiring
 
 [slides-now-title]: "Agile quality by @bahmutov"
 [slides-now-theme]: "full"

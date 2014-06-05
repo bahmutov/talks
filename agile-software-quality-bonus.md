@@ -1,11 +1,4 @@
-# Bonus
-
-* This presentation: [http://goo.gl/MafEMk](http://goo.gl/MafEMk)
-* Blog: [http://bahmutov.calepin.co/](http://bahmutov.calepin.co/)
-* Tools: [http://glebbahmutov.com/](http://glebbahmutov.com/)
-* [@bahmutov](https://twitter.com/bahmutov)
-
-And now if we have time ...
+# Agile software quality: bonus material
 
 ## Process: code reviews
 
