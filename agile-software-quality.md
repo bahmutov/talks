@@ -48,9 +48,9 @@ Small ([15 people](http://www.kensho.com/#team)) startup
 * front end: angularjs, D3, Django
 * gruntjs for building the front-end
 * back end: Python
-* JIRA, Phabricator, Zulip, Google Apps
-* puppet / chef / docker deployment
-* git / Amazon / sublime / webstorm
+* git, JIRA, Phabricator
+* Jenkins, puppet, chef, docker
+* Zulip, Google Apps, sublime, webstorm
 
 ## Dev pipeline
 
@@ -134,6 +134,12 @@ to wow you?
 3. 1 week
 4. 1 day
 5. 1 hour
+
+```notes
+I believe if we can achieve very fast bug resolution, we can impress
+the customer. This is only because the rest of the software in the world
+is so crappy and constantly breaks. At least we can fix it right away!
+```
 
 ## Quality /= Testing
 
@@ -233,6 +239,14 @@ believe that in terms of impact improving the people pays off
 much larger dividends even in the medium run
 ```
 
+## Higher quality, less testing
+
+I will show a single example from each category.
+
+There are more examples in the
+[bonus materials](https://github.com/bahmutov/talks/blob/master/agile-software-quality-bonus.md)
+and my [blog](http://bahmutov.calepin.co/)
+
 ## Observation
 
 > Users do not see ALL exceptions and hardly report ANY.
@@ -249,11 +263,8 @@ If you are a mobile developer, use Crashlytics or Apphance
 
 ## Sentry Client JavaScript
 
-```
-<script src="//cdn.ravenjs.com/1.1.15/jquery,native/raven.min.js"></script>
-<script>
+```js
 Raven.config('https://public@app.getsentry.com/<API ID>').install();
-</script>
 ```
 
 ```notes
@@ -293,8 +304,8 @@ Sentry is good compliment to New Relic and Logstash.
 ## Fixing a reported error: typical steps
 
 * User reports a bug, including reproduction steps
-* Developer tries to recreate the bug.
-* Back and fourth replies
+* Developer tries to recreate the bug
+* Back and forth replies
 * Finally, the developer recreates the steps and see the bug
 
 > Aha, if the user enters '-1' in age field everything goes crazy!
