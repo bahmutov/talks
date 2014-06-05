@@ -155,6 +155,9 @@ Even automated tests are too slow - because you must spend time
 writing and maintaining them.
 ```
 
+---
+![fullscreen](https://raw.github.com/bahmutov/talks/master/images/tested-wife-meme.jpg)
+
 ## Axiom 1
 
 > Every software system has bugs.
