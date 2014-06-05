@@ -73,7 +73,7 @@ customer's EXACT need.
 
 ```notes
 A company with several customers will be slow to solve one customer's
-problem. Even when desired, it will take take, since there are
+problem. Even when desired, it will take time, since there are
 other customers and legacy support worries.
 ```
 
@@ -97,20 +97,6 @@ Do not build an elaborate path until you are sure this is where the users are wa
 
 1. Deliver software *quickly*
 2. Deliver software that *works*
-
----
-![Hard to run and test fullscreen](https://raw.github.com/bahmutov/talks/master/images/mr-incredible.png)
-
-```notes
-This is a scene from one of my favorite movies "The Incredibles".
-The superhero is discovered and tries to outrun the guns shooting expanding
-sticky rubber balls. Soon he is buried under them.
-
-You can watch this particular scene at http://youtu.be/dK_OKGELcn0?t=1m33s
-
-Anyone trying to write large tests or user interface tests
-can relate to this scene.
-```
 
 ## Quick feature delivery: average
 
@@ -144,6 +130,20 @@ to wow you?
 I believe if we can achieve very fast bug resolution, we can impress
 the customer. This is only because the rest of the software in the world
 is so crappy and constantly breaks. At least we can fix it right away!
+```
+
+---
+![Hard to run and test fullscreen](https://raw.github.com/bahmutov/talks/master/images/mr-incredible.png)
+
+```notes
+This is a scene from one of my favorite movies "The Incredibles".
+The superhero is discovered and tries to outrun the guns shooting expanding
+sticky rubber balls. Soon he is buried under them.
+
+You can watch this particular scene at http://youtu.be/dK_OKGELcn0?t=1m33s
+
+Anyone trying to write large tests or user interface tests
+can relate to this scene.
 ```
 
 ## Quality /= Testing
@@ -314,7 +314,8 @@ More details how to setup Sentry for client code in
 Automatic exception reporting worked wonders and removed need to do a lot of
 manual front end testing.
 
-Sentry is good compliment to New Relic and Logstash.
+Sentry is good complement to
+[New Relic](http://newrelic.com/) and [Logstash](http://logstash.net/).
 
 ---
 ![fullscreen](https://raw.github.com/bahmutov/talks/master/images/need-to-subscribe-to-error-monitoring.png)
