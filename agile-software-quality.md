@@ -45,12 +45,12 @@ process at MathWorks or even at my other startups.
 Small ([15 people](http://www.kensho.com/#team)) startup
 [trying to change](http://goo.gl/exPHEX) the world of financial analysis.
 
-* front end: angularjs, D3, Django
+* front end: Angularjs, D3, Django
 * gruntjs for building the front-end
 * back end: Python
 * git, JIRA, Phabricator
 * Jenkins, puppet, chef, docker
-* Zulip, Google Apps, sublime, webstorm
+* Zulip, Google Apps, Sublime, Webstorm
 
 ## Dev pipeline
 
@@ -77,7 +77,7 @@ other customers and legacy support worries.
 We are always delivering a prototype feature to
 find IF it solves customer's need.
 
-Only then we tighten the screws and make it maintainable in the long run.
+Only then do we tighten the screws and make it maintainable in the long run.
 
 ---
 ![Desired paths fullscreen](https://raw.github.com/bahmutov/talks/master/images/desired-paths.png)
@@ -88,7 +88,7 @@ Only then we tighten the screws and make it maintainable in the long run.
 Do not build an elaborate path until you are sure this is where the users are walking
 ```
 
-## 2 goals
+## 2 Goals
 
 1. Deliver software *quickly*
 2. Deliver software that *works*
@@ -103,11 +103,11 @@ sticky rubber balls. Soon he is buried under them.
 
 You can watch this particular scene at http://youtu.be/dK_OKGELcn0?t=1m33s
 
-Anyone trying to write large tests, user interface tests
+Anyone trying to write large tests or user interface tests
 can relate to this scene.
 ```
 
-## Quick feature delivery
+## Quick feature delivery: average
 
 - MathWorks: at least 6 months / 3-6 weeks.
 - EveryScape/uTest: at least 1 month
@@ -163,7 +163,7 @@ writing and maintaining them.
 > Every software system has bugs.
 
 ```notes
-your operating system has bugs, your printer driver has bugs, your favorite website
+Your operating system has bugs, your printer driver has bugs, your favorite website
 has bugs. The sooner you accept this fact the better.
 ```
 
@@ -238,8 +238,8 @@ Based on the [blog posts](http://bahmutov.calepin.co/)
 It is much easier to improve quality by fixing a bug or
 using a specific product. It is much harder to improve the company's
 process, and it extremely hard to improve the people. I personally
-believe that in terms of impact improving the people pays off
-much larger dividends even in the medium run
+believe that in terms of impact, improving the people pays off
+much larger dividends, even in the medium run
 ```
 
 ## Higher quality, less testing
@@ -254,7 +254,7 @@ and my [blog](http://bahmutov.calepin.co/)
 
 > Users do not see ALL exceptions and hardly report ANY.
 
-Use exception reporting tools, like [Sentry](https://getsentry.com/welcome/)
+Use a crash reporting tool, like [Sentry](https://getsentry.com/welcome/),
 to get real time picture of all errors in your system.
 
 ```notes
@@ -264,8 +264,9 @@ Works in the browser and back end for most platforms.
 If you are a mobile developer, use Crashlytics or Apphance
 ```
 
-## Sentry Client - 1 line
+## Sentry
 
+Add Sentry to your project
 ```
 // browser javascript
 Raven.config('https://public@app.getsentry.com/<API ID>').install();
@@ -296,7 +297,7 @@ obvious.
 ![Sentry error fullscreen](https://raw.github.com/bahmutov/talks/master/images/sentry-error.png)
 
 ```notes
-There is plenty of information with each error, including stack, and any additional
+There is plenty of information with each error, including the stack trace, and any additional
 information
 ```
 
@@ -313,7 +314,7 @@ Sentry is good compliment to New Relic and Logstash.
 ---
 ![fullscreen](https://raw.github.com/bahmutov/talks/master/images/need-to-subscribe-to-error-monitoring.png)
 
-## Fixing a reported error: typical steps
+## Fixing a reported error - typical steps:
 
 * User reports a bug, including reproduction steps
 * Developer tries to recreate the bug
@@ -325,7 +326,7 @@ Sentry is good compliment to New Relic and Logstash.
 ```notes
 Typical amount of information described by the user / tester is only
 the surface visible to the user. It takes a long debug cycle to
-even recreate the bug. Some bugs are transient and happen only very
+even recreate the bug. Some bugs are transient and happen very
 infrequently
 ```
 
