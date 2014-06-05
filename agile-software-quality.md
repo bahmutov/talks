@@ -42,7 +42,8 @@ process at MathWorks or even at my other startups.
 
 ## Kensho
 
-Small (15 people) startup [trying to change](http://goo.gl/exPHEX) the world of financial analysis.
+Small ([15 people](http://www.kensho.com/#team)) startup
+[trying to change](http://goo.gl/exPHEX) the world of financial analysis.
 
 * front end: angularjs, D3, Django
 * gruntjs for building the front-end
@@ -77,6 +78,15 @@ We are always delivering a prototype feature to
 find IF it solves customer's need.
 
 Only then we tighten the screws and make it maintainable in the long run.
+
+---
+![Desired paths fullscreen](https://raw.github.com/bahmutov/talks/master/images/desired-paths.png)
+
+```notes
+"Desired paths" by Jan-Dirk van der Burg http://www.olifantenpaadjes.nl/
+
+Do not build an elaborate path until you are sure this is where the users are walking
+```
 
 ## 2 goals
 
@@ -114,7 +124,7 @@ the features we have delivered at Kensho are part of our broad vision
 and customer requests that fit this vision.
 ```
 
-## How fast is fast?
+## Quick bug fix
 
 > If you discover a bug and report it, how fast should it be fixed
 to wow you?
@@ -127,7 +137,8 @@ to wow you?
 
 ## Quality /= Testing
 
-First observation: *as a small company you cannot test your way to quality*
+> As a small company you cannot test your way to quality
+if you want to deliver features in the matter of hours.
 
 You do not have enough human and TIME resources to do enough testing.
 
@@ -166,15 +177,6 @@ have discovered.
 ```
 
 ---
-![Desired paths fullscreen](https://raw.github.com/bahmutov/talks/master/images/desired-paths.png)
-
-```notes
-"Desired paths" by Jan-Dirk van der Burg http://www.olifantenpaadjes.nl/
-
-Do not build an elaborate path until you are sure this is where the users are walking
-```
-
----
 ![fullscreen](https://raw.github.com/bahmutov/talks/master/images/i-dont-always-test-everything.png)
 
 ```notes
@@ -186,8 +188,9 @@ to avoid some of the more time-consuming testing (integration, manual user inter
 
 ## Kensho engineering goals
 
-* fix any bugs extremely quickly
+* fix every bug extremely quickly (< 1 day)
 * prevent bugs from sneaking in
+* find an engineering solution to any problem
 
 ```notes
 The best way to reduce need for testing is to prevent bugs from sneaking in.
@@ -230,7 +233,7 @@ believe that in terms of impact improving the people pays off
 much larger dividends even in the medium run
 ```
 
-## Process: real time monitoring
+## Observation
 
 > Users do not see ALL exceptions and hardly report ANY.
 
@@ -287,7 +290,7 @@ Sentry is good compliment to New Relic and Logstash.
 ---
 ![fullscreen](https://raw.github.com/bahmutov/talks/master/images/need-to-subscribe-to-error-monitoring.png)
 
-## Quick fixes for reported exceptions
+## Fixing a reported error: typical steps
 
 * User reports a bug, including reproduction steps
 * Developer tries to recreate the bug.
@@ -303,7 +306,10 @@ even recreate the bug. Some bugs are transient and happen only very
 infrequently
 ```
 
-## Quick fix: bug context
+## Can we fix quicker?
+
+> What if the system reported exception right
+when something went wrong?
 
 > What if every exception reported to Sentry carried a lot of context
 information: stack, variables, inputs, environment setup?
@@ -400,13 +406,12 @@ do not match.
 
 ## Skills
 
-```
-name   | prototypes | callbacks | jQuery
-------------------------------------------
-Tim    |     7      |      3    |    1
-Eve    |     1      |      9    |    5
-Joe    |     1      |      5    |    9
-```
+    name   | prototypes | callbacks | jQuery
+    ------------------------------------------
+    Tim    |     7      |      3    |    1
+    Eve    |     1      |      9    |    5
+    Joe    |     1      |      5    |    9
+
 
 ```notes
 Start ups usually require wider set of skills. Bringing a group of
@@ -414,13 +419,13 @@ people to work on the project means the proficiency in a particular
 feature varies greatly.
 ```
 
-## People: explicit project's skills required
+## People: list what project needs
 
 * List 2-3 books / tutorials / training courses required for each project.
 * Run a couple of training sessions
 
 Example: buy [JavaScript Books](http://bahmutov.calepin.co/javascript-books.html)
-for the office library.
+for the office library, run a book club.
 
 ```notes
 Add to project's repository README.md a few books that one should read
@@ -468,7 +473,7 @@ even if you have to invent them.
 * [@bahmutov](https://twitter.com/bahmutov)
 * [Bonus material](https://github.com/bahmutov/talks/blob/master/agile-software-quality-bonus.md)
 
-### PS: Kensho is hiring
+### PS: [Kensho](http://www.kensho.com/) is hiring
 
 [slides-now-title]: "Agile quality by @bahmutov"
 [slides-now-theme]: "full"
