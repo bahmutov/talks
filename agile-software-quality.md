@@ -306,7 +306,7 @@ Sentry is good compliment to New Relic and Logstash.
 * User reports a bug, including reproduction steps
 * Developer tries to recreate the bug
 * Back and forth replies
-* Finally, the developer recreates the steps and see the bug
+* Finally, the developer recreates the steps and sees the bug
 
 > Aha, if the user enters '-1' in age field everything goes crazy!
 
@@ -322,7 +322,7 @@ infrequently
 > What if the system reported exception right
 when something went wrong?
 
-> What if every exception reported to Sentry carried a lot of context
+> What if every reported exception carried a lot of context
 information: stack, variables, inputs, environment setup?
 
 Then a developer can determine the root cause of the error by looking
