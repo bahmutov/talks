@@ -264,15 +264,24 @@ Works in the browser and back end for most platforms.
 If you are a mobile developer, use Crashlytics or Apphance
 ```
 
-## Sentry Client JavaScript
+## Sentry Client - 1 line
 
-```js
+```
+// browser javascript
 Raven.config('https://public@app.getsentry.com/<API ID>').install();
+# python django
+INSTALLED_APPS = (
+    'raven.contrib.django.raven_compat',
+)
+// node
+var raven = require('raven');
+var client = new raven.Client('{{ SENTRY_DSN }}');
+client.patchGlobal();
 ```
 
 ```notes
 Single line of code installs global exception handler.
-Similarly, server-side installation is very simple
+Similarly, server-side installation is very simple.
 ```
 
 ---
