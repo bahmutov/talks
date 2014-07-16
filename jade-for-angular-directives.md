@@ -105,6 +105,7 @@ where `name` is attached to the scope.
 ## Jade is to HTML
 
 * CoffeeScript to JavaScript
+* Markdown to HTML
 * JSON to XML
 * Python to ?
 
@@ -117,6 +118,11 @@ will compile it from Jade to HTML first, then to JavaScript.
 
 We can write our directives with less boilerplate text and fewer
 "I forgot to close the div" errors.
+
+## Related
+
+* [Jade templates for Angular directives](http://bahmutov.calepin.co/jade-templates-for-angular-directives.html)
+* [AngularJs inside Jade templates](http://bahmutov.calepin.co/angularjs-inside-jade-templates.html)
 
 ### author
 
