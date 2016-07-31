@@ -1,11 +1,7 @@
 'use strict'
 
-// given an array of numbers, multiply even numbers by a constant
-// and print the result
-// var numbers = [3, 2, 8]
-// var constant = 2
-// output: 4 16
-
+// given an array of numbers, multiply
+// even numbers by a constant and print the result
 var numbers = [3, 2, 8]
 var constant = 2
 
