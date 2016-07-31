@@ -14,8 +14,16 @@ function print(x) {
 function isEven(x) {
   return x % 2 === 0
 }
-for (k = 0; k < numbers.length; k += 1) {
-  if (isEven(numbers[k])) {
-    print(mul(numbers[k], constant))
-  }
-}
+// function mulBy(K) {
+//   return function (x) {
+//     return K * x
+//   }
+// }
+const mulBy = K => x => K * x
+const double = mulBy(2)
+console.log(double.toString())
+// for (k = 0; k < numbers.length; k += 1) {
+//   if (isEven(numbers[k])) {
+//     print(mul(numbers[k], constant))
+//   }
+// }
