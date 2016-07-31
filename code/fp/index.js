@@ -15,8 +15,14 @@ function isEven(x) {
   return x % 2 === 0
 }
 const byConstant = mul.bind(null, constant)
+function compose(f, g) {
+  return function(x) {
+    return f(g(x))
+  }
+}
+const mulAndPrint = compose(print, byConstant)
 for (k = 0; k < numbers.length; k += 1) {
   if (isEven(numbers[k])) {
-    print(byConstant(numbers[k]))
+    mulAndPrint(numbers[k])
   }
 }
