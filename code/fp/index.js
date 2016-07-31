@@ -19,16 +19,10 @@ function isEven(x) {
 //     return K * x
 //   }
 // }
-const mulBy = K => x => K * x
-const double = mulBy(2)
-console.log(double.toString())
-// const K = 3
-// const triple = eval('(' + double.toString() + ')')
-const K = 3
-const triple = eval('(x => K * x)')
-console.log(triple(10))
-// for (k = 0; k < numbers.length; k += 1) {
-//   if (isEven(numbers[k])) {
-//     print(mul(numbers[k], constant))
-//   }
-// }
+const mulBy = K => x => mul(K, x)
+const byConstant = mulBy(constant)
+for (k = 0; k < numbers.length; k += 1) {
+  if (isEven(numbers[k])) {
+    print(byConstant(numbers[k]))
+  }
+}
