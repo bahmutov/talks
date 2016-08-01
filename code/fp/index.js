@@ -14,15 +14,28 @@ function isEven(x) {
   return x % 2 === 0
 }
 const byConstant = mul.bind(null, constant)
-function compose(f, g) {
-  return function(x) {
-    return f(g(x))
+function filter(fn, list) {
+  var k = 0
+  const result = []
+  for (k = 0; k < list.length; k += 1) {
+    if (fn(list[k])) {
+      result.push(list[k])
+    }
+  }
+  return result
+}
+function map(fn, list) {
+  var k = 0
+  const result = []
+  for (k = 0; k < list.length; k += 1) {
+    result.push(fn(list[k]))
+  }
+  return result
+}
+function forEach(fn, list) {
+  var k = 0
+  for (k = 0; k < list.length; k += 1) {
+    fn(list[k])
   }
 }
-const mulAndPrint = compose(print, byConstant)
-var k = 0
-for (k = 0; k < numbers.length; k += 1) {
-  if (isEven(numbers[k])) {
-    mulAndPrint(numbers[k])
-  }
-}
+forEach(print, map(byConstant, filter(isEven, numbers)))
