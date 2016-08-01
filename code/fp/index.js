@@ -14,36 +14,31 @@ function isEven(x) {
   return x % 2 === 0
 }
 const byConstant = mul.bind(null, constant)
-function filter(fn) {
-  return function(list) {
-    var k = 0
-    const result = []
-    for (k = 0; k < list.length; k += 1) {
-      if (fn(list[k])) {
-        result.push(list[k])
-      }
-    }
-    return result
-  }
-}
-function map(fn) {
-  return function(list) {
-    var k = 0
-    const result = []
-    for (k = 0; k < list.length; k += 1) {
-      result.push(fn(list[k]))
-    }
-    return result
-  }
-}
-function forEach(fn) {
-  return function(list) {
-    var k = 0
-    for (k = 0; k < list.length; k += 1) {
-      fn(list[k])
+const curry = fn => x => y => fn(x, y)
+const filter = curry(function filter(fn, list) {
+  var k = 0
+  const result = []
+  for (k = 0; k < list.length; k += 1) {
+    if (fn(list[k])) {
+      result.push(list[k])
     }
   }
-}
+  return result
+})
+const map = curry((fn, list) => {
+  var k = 0
+  const result = []
+  for (k = 0; k < list.length; k += 1) {
+    result.push(fn(list[k]))
+  }
+  return result
+})
+const forEach = curry(function forEach(fn, list) {
+  var k = 0
+  for (k = 0; k < list.length; k += 1) {
+    fn(list[k])
+  }
+})
 const onlyEven = filter(isEven)
 const multiply = map(byConstant)
 const printAll = forEach(print)
