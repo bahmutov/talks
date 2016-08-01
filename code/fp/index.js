@@ -38,4 +38,7 @@ function forEach(fn, list) {
     fn(list[k])
   }
 }
-forEach(print, map(byConstant, filter(isEven, numbers)))
+const onlyEven = filter.bind(null, isEven)
+const multiply = map.bind(null, byConstant)
+const printAll = forEach.bind(null, print)
+printAll(multiply(onlyEven(numbers)))
