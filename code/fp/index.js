@@ -4,7 +4,6 @@
 // even numbers by a constant and print the result
 var numbers = [3, 2, 8]
 var constant = 2
-var k = 0
 function mul(a, b) {
   return a * b
 }
@@ -21,6 +20,7 @@ function compose(f, g) {
   }
 }
 const mulAndPrint = compose(print, byConstant)
+var k = 0
 for (k = 0; k < numbers.length; k += 1) {
   if (isEven(numbers[k])) {
     mulAndPrint(numbers[k])
