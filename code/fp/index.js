@@ -39,9 +39,10 @@ const forEach = curry(function forEach(fn, list) {
     fn(list[k])
   }
 })
-const onlyEven = filter(isEven)
-const multiply = map(byConstant)
-const printAll = forEach(print)
 const pipe = (f, g, h) => x => h(g(f(x)))
-const solution = pipe(onlyEven, multiply, printAll)
+const solution = pipe(
+  filter(isEven),
+  map(byConstant),
+  forEach(print)
+)
 solution(numbers)
