@@ -41,4 +41,6 @@ function forEach(fn, list) {
 const onlyEven = filter.bind(null, isEven)
 const multiply = map.bind(null, byConstant)
 const printAll = forEach.bind(null, print)
-printAll(multiply(onlyEven(numbers)))
+const compose = (f, g, h) => x => f(g(h(x)))
+const solution = compose(printAll, multiply, onlyEven)
+solution(numbers)
